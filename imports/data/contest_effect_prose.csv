@@ -1,0 +1,1304 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://assets-cdn.github.com">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-4ba00b1aa0227e4b7a7961544c3b7938afb2720757a471735991ec4475c829e0.css" media="all" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-aeb14149a60ece2627728fe084c968714b7b13a61dcc97b133bf88f2e005fe55.css" media="all" rel="stylesheet" />
+  
+  
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/site-7fce9150999c5933f8efd2fd54823cd38a84b6456e56238fa6e39bee242641a9.css" media="all" rel="stylesheet" />
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>pokedex/contest_effect_prose.csv at master · veekun/pokedex · GitHub</title>
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta content="https://avatars1.githubusercontent.com/u/1147007?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="veekun/pokedex" property="og:title" /><meta content="https://github.com/veekun/pokedex" property="og:url" /><meta content="pokedex - more than you ever wanted to know about Pokémon" property="og:description" />
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  
+  <meta name="pjax-timeout" content="1000">
+  
+  <meta name="request-id" content="81E4:1B7CA:54FA7C:8051A8:5952CF9B" data-pjax-transient>
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+  <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="81E4:1B7CA:54FA7C:8051A8:5952CF9B" name="octolytics-dimension-request_id" /><meta content="iad" name="octolytics-dimension-region_edge" /><meta content="iad" name="octolytics-dimension-region_render" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
+
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged Out">
+
+
+  
+
+      <meta name="hostname" content="github.com">
+  <meta name="user-login" content="">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="MWEyZThmYTg1YzM0ODFhNDc0YWQ5NGUxM2Y2NjYzM2ZkNzU2MjAwY2ZjNGVkOTQwMWVlYmFlNzljMzgzYTdkYnx7InJlbW90ZV9hZGRyZXNzIjoiMTAwLjM2LjE2My4yMTIiLCJyZXF1ZXN0X2lkIjoiODFFNDoxQjdDQTo1NEZBN0M6ODA1MUE4OjU5NTJDRjlCIiwidGltZXN0YW1wIjoxNDk4NTk5MzIyLCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+
+
+  <meta name="html-safe-nonce" content="e3b4bce4eac1dda913299e5d61782adc36c24285">
+
+  <meta http-equiv="x-pjax-version" content="44de8ab99111cf5f67a4846e5653baad">
+  
+
+      <link href="https://github.com/veekun/pokedex/commits/master.atom" rel="alternate" title="Recent Commits to pokedex:master" type="application/atom+xml">
+
+  <meta name="description" content="pokedex - more than you ever wanted to know about Pokémon">
+  <meta name="go-import" content="github.com/veekun/pokedex git https://github.com/veekun/pokedex.git">
+
+  <meta content="1147007" name="octolytics-dimension-user_id" /><meta content="veekun" name="octolytics-dimension-user_login" /><meta content="2596276" name="octolytics-dimension-repository_id" /><meta content="veekun/pokedex" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="2596276" name="octolytics-dimension-repository_network_root_id" /><meta content="veekun/pokedex" name="octolytics-dimension-repository_network_root_nwo" /><meta content="false" name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" />
+
+
+    <link rel="canonical" href="https://github.com/veekun/pokedex/blob/master/pokedex/data/csv/contest_effect_prose.csv" data-pjax-transient>
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+
+  </head>
+
+  <body class="logged-out env-production page-blob">
+    
+
+
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="px-2 py-4 show-on-focus js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+
+          <header class="site-header js-details-container Details" role="banner">
+  <div class="site-nav-container">
+    <a class="header-logo-invertocat" href="https://github.com/" aria-label="Homepage" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+    </a>
+
+    <button class="btn-link float-right site-header-toggle js-details-target" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <svg aria-hidden="true" class="octicon octicon-three-bars" height="24" version="1.1" viewBox="0 0 12 16" width="18"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"/></svg>
+    </button>
+
+    <div class="site-header-menu">
+      <nav class="site-header-nav">
+        <a href="/features" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:features" data-selected-links="/features /features/code-review /features/project-management /features/integrations /features">
+          Features
+</a>        <a href="/business" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:business" data-selected-links="/business /business/security /business/customers /business">
+          Business
+</a>        <a href="/explore" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /stars /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore">
+          Explore
+</a>            <a href="/marketplace" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:marketplace" data-selected-links=" /marketplace">
+              Marketplace
+</a>        <a href="/pricing" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:pricing" data-selected-links="/pricing /pricing/developer /pricing/team /pricing/business-hosted /pricing/business-enterprise /pricing">
+          Pricing
+</a>      </nav>
+
+      <div class="site-header-actions">
+          <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/veekun/pokedex/search" class="js-site-search-form" data-scoped-search-url="/veekun/pokedex/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <label class="form-control header-search-wrapper js-chromeless-input-container">
+        <a href="/veekun/pokedex/blob/master/pokedex/data/csv/contest_effect_prose.csv" class="header-search-scope no-underline">This repository</a>
+      <input type="text"
+        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
+        data-hotkey="s"
+        name="q"
+        value=""
+        placeholder="Search"
+        aria-label="Search this repository"
+        data-unscoped-placeholder="Search GitHub"
+        data-scoped-placeholder="Search"
+        autocapitalize="off">
+        <input type="hidden" class="js-site-search-type-field" name="type" >
+    </label>
+</form></div>
+
+
+          <a class="text-bold site-header-link" href="/login?return_to=%2Fveekun%2Fpokedex%2Fblob%2Fmaster%2Fpokedex%2Fdata%2Fcsv%2Fcontest_effect_prose.csv" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+            <span class="text-gray">or</span>
+            <a class="text-bold site-header-link" href="/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+    <div id="js-flash-container">
+</div>
+
+
+
+  <div role="main">
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+    <div id="js-repo-pjax-container" data-pjax-container>
+      
+
+
+
+  
+
+
+    <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+      <div class="container repohead-details-container">
+
+        <ul class="pagehead-actions">
+  <li>
+      <a href="/login?return_to=%2Fveekun%2Fpokedex"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+    Watch
+  </a>
+  <a class="social-count" href="/veekun/pokedex/watchers"
+     aria-label="77 users are watching this repository">
+    77
+  </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fveekun%2Fpokedex"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="/veekun/pokedex/stargazers"
+      aria-label="594 users starred this repository">
+      594
+    </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fveekun%2Fpokedex"
+        class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+        Fork
+      </a>
+
+    <a href="/veekun/pokedex/network" class="social-count"
+       aria-label="256 users forked this repository">
+      256
+    </a>
+  </li>
+</ul>
+
+        <h1 class="public ">
+  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+  <span class="author" itemprop="author"><a href="/veekun" class="url fn" rel="author">veekun</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="/veekun/pokedex" data-pjax="#js-repo-pjax-container">pokedex</a></strong>
+
+</h1>
+
+      </div>
+      <div class="container">
+        
+<nav class="reponav js-repo-nav js-sidenav-container-pjax"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/veekun/pokedex" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /veekun/pokedex" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a href="/veekun/pokedex/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /veekun/pokedex/issues" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">83</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/veekun/pokedex/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /veekun/pokedex/pulls" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">5</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+    <a href="/veekun/pokedex/projects" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /veekun/pokedex/projects">
+      <svg aria-hidden="true" class="octicon octicon-project" height="16" version="1.1" viewBox="0 0 15 16" width="15"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+      Projects
+      <span class="Counter" >0</span>
+</a>
+    <a href="/veekun/pokedex/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /veekun/pokedex/wiki">
+      <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
+      Wiki
+</a>
+
+    <div class="reponav-dropdown js-menu-container">
+      <button type="button" class="btn-link reponav-item reponav-dropdown js-menu-target " data-no-toggle aria-expanded="false" aria-haspopup="true">
+        Insights
+        <svg aria-hidden="true" class="octicon octicon-triangle-down v-align-middle text-gray" height="11" version="1.1" viewBox="0 0 12 16" width="8"><path fill-rule="evenodd" d="M0 5l6 6 6-6z"/></svg>
+      </button>
+      <div class="dropdown-menu-content js-menu-content">
+        <div class="dropdown-menu dropdown-menu-sw">
+          <a class="dropdown-item" href="/veekun/pokedex/pulse" data-skip-pjax>
+            <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8z"/></svg>
+            Pulse
+          </a>
+          <a class="dropdown-item" href="/veekun/pokedex/graphs" data-skip-pjax>
+            <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
+            Graphs
+          </a>
+        </div>
+      </div>
+    </div>
+</nav>
+
+      </div>
+    </div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content">
+
+    
+  <a href="/veekun/pokedex/blob/2af13f4f153ddaae3523396f4bb7a90e707b3659/pokedex/data/csv/contest_effect_prose.csv" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+  <!-- blob contrib key: blob_contributors:v21:e563181eff6f5d06b545a99d554a3a17 -->
+
+  <div class="file-navigation js-zeroclipboard-container">
+    
+<div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
+  <button class=" btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    
+    type="button" aria-label="Switch branches or tags" aria-expanded="false" aria-haspopup="true">
+      <i>Branch:</i>
+      <span class="js-select-button css-truncate-target">master</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax>
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+        <span class="select-menu-title">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/encukou-extra-data/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="encukou-extra-data"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                encukou-extra-data
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/encukou-movesets/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="encukou-movesets"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                encukou-movesets
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/encukou-structs/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="encukou-structs"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                encukou-structs
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/form-differences/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="form-differences"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                form-differences
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/gh-pages/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="gh-pages"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                gh-pages
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/is_asymmetric/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="is_asymmetric"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                is_asymmetric
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="/veekun/pokedex/blob/master/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                master
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/oras/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="oras"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                oras
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/overworld-rebased/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="overworld-rebased"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                overworld-rebased
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/overworld/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="overworld"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                overworld
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/pokemon_families/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="pokemon_families"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                pokemon_families
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/production/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="production"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                production
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/python3-sort-of/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="python3-sort-of"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                python3-sort-of
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/split-pokemoves/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="split-pokemoves"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                split-pokemoves
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/struct/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="struct"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                struct
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/travis-postgres/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="travis-postgres"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                travis-postgres
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/travis/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="travis"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                travis
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/update-move-changelogs/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="update-move-changelogs"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                update-move-changelogs
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/whoosh-fix/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="whoosh-fix"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                whoosh-fix
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/wip/eagerloading/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="wip/eagerloading"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                wip/eagerloading
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/wip/pickup/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="wip/pickup"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                wip/pickup
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/yaml/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="yaml"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                yaml
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/veekun/pokedex/blob/zhorken-prose/pokedex/data/csv/contest_effect_prose.csv"
+               data-name="zhorken-prose"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                zhorken-prose
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2016101602/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2016101602"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2016101602">
+                veekun-promotions/2016101602
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2016101601/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2016101601"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2016101601">
+                veekun-promotions/2016101601
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2016092501/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2016092501"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2016092501">
+                veekun-promotions/2016092501
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2016072402/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2016072402"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2016072402">
+                veekun-promotions/2016072402
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2016072401/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2016072401"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2016072401">
+                veekun-promotions/2016072401
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2015110502/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2015110502"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2015110502">
+                veekun-promotions/2015110502
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2015110501/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2015110501"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2015110501">
+                veekun-promotions/2015110501
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2015082001/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2015082001"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2015082001">
+                veekun-promotions/2015082001
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2015080301/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2015080301"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2015080301">
+                veekun-promotions/2015080301
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2014091601/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2014091601"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2014091601">
+                veekun-promotions/2014091601
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2014072701/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2014072701"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2014072701">
+                veekun-promotions/2014072701
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2014052001/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2014052001"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2014052001">
+                veekun-promotions/2014052001
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2014041901/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2014041901"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2014041901">
+                veekun-promotions/2014041901
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2014031702/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2014031702"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2014031702">
+                veekun-promotions/2014031702
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2014031701/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2014031701"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2014031701">
+                veekun-promotions/2014031701
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2014010601/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2014010601"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2014010601">
+                veekun-promotions/2014010601
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2013111501/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2013111501"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2013111501">
+                veekun-promotions/2013111501
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2013110101/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2013110101"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2013110101">
+                veekun-promotions/2013110101
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2013020701/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2013020701"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2013020701">
+                veekun-promotions/2013020701
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2012112001/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2012112001"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2012112001">
+                veekun-promotions/2012112001
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2012100601/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2012100601"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2012100601">
+                veekun-promotions/2012100601
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2012062401/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2012062401"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2012062401">
+                veekun-promotions/2012062401
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2012040101/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2012040101"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2012040101">
+                veekun-promotions/2012040101
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2012032301/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2012032301"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2012032301">
+                veekun-promotions/2012032301
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2012021001/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2012021001"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2012021001">
+                veekun-promotions/2012021001
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2011091201/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2011091201"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2011091201">
+                veekun-promotions/2011091201
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2011091102/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2011091102"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2011091102">
+                veekun-promotions/2011091102
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+              href="/veekun/pokedex/tree/veekun-promotions/2011091101/pokedex/data/csv/contest_effect_prose.csv"
+              data-name="veekun-promotions/2011091101"
+              data-skip-pjax="true"
+              rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target" title="veekun-promotions/2011091101">
+                veekun-promotions/2011091101
+              </span>
+            </a>
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <div class="BtnGroup float-right">
+      <a href="/veekun/pokedex/find/master"
+            class="js-pjax-capture-input btn btn-sm BtnGroup-item"
+            data-pjax
+            data-hotkey="t">
+        Find file
+      </a>
+      <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm BtnGroup-item tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
+    </div>
+    <div class="breadcrumb js-zeroclipboard-target">
+      <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/veekun/pokedex"><span>pokedex</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/veekun/pokedex/tree/master/pokedex"><span>pokedex</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/veekun/pokedex/tree/master/pokedex/data"><span>data</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/veekun/pokedex/tree/master/pokedex/data/csv"><span>csv</span></a></span><span class="separator">/</span><strong class="final-path">contest_effect_prose.csv</strong>
+    </div>
+  </div>
+
+
+  
+  <div class="commit-tease">
+      <span class="float-right">
+        <a class="commit-tease-sha" href="/veekun/pokedex/commit/f24702b7a916001bf1fe6a78205c5763ef147dc3" data-pjax>
+          f24702b
+        </a>
+        <relative-time datetime="2011-03-29T02:12:30Z">Mar 28, 2011</relative-time>
+      </span>
+      <div>
+        <img alt="@eevee" class="avatar" height="20" src="https://avatars2.githubusercontent.com/u/94112?v=3&amp;s=40" width="20" />
+        <a href="/eevee" class="user-mention" rel="contributor">eevee</a>
+          <a href="/veekun/pokedex/commit/f24702b7a916001bf1fe6a78205c5763ef147dc3" class="message" data-pjax="true" title="language_id -&gt; local_language_id">language_id -&gt; local_language_id</a>
+      </div>
+
+    <div class="commit-tease-contributors">
+      <button type="button" class="btn-link muted-link contributors-toggle" data-facebox="#blob_contributors_box">
+        <strong>2</strong>
+         contributors
+      </button>
+          <a class="avatar-link tooltipped tooltipped-s" aria-label="eevee" href="/veekun/pokedex/commits/master/pokedex/data/csv/contest_effect_prose.csv?author=eevee"><img alt="@eevee" class="avatar" height="20" src="https://avatars2.githubusercontent.com/u/94112?v=3&amp;s=40" width="20" /> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="encukou" href="/veekun/pokedex/commits/master/pokedex/data/csv/contest_effect_prose.csv?author=encukou"><img alt="@encukou" class="avatar" height="20" src="https://avatars3.githubusercontent.com/u/302922?v=3&amp;s=40" width="20" /> </a>
+
+
+    </div>
+
+    <div id="blob_contributors_box" style="display:none">
+      <h2 class="facebox-header" data-facebox-id="facebox-header">Users who have contributed to this file</h2>
+      <ul class="facebox-user-list" data-facebox-id="facebox-description">
+          <li class="facebox-user-list-item">
+            <img alt="@eevee" height="24" src="https://avatars0.githubusercontent.com/u/94112?v=3&amp;s=48" width="24" />
+            <a href="/eevee">eevee</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@encukou" height="24" src="https://avatars1.githubusercontent.com/u/302922?v=3&amp;s=48" width="24" />
+            <a href="/encukou">encukou</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="file">
+    <div class="file-header">
+  <div class="file-actions">
+
+    <div class="BtnGroup">
+      <a href="/veekun/pokedex/raw/master/pokedex/data/csv/contest_effect_prose.csv" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a>
+        <a href="/veekun/pokedex/blame/master/pokedex/data/csv/contest_effect_prose.csv" class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b">Blame</a>
+      <a href="/veekun/pokedex/commits/master/pokedex/data/csv/contest_effect_prose.csv" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
+    </div>
+
+
+        <button type="button" class="btn-octicon disabled tooltipped tooltipped-nw"
+          aria-label="You must be signed in to make or propose changes">
+          <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
+        </button>
+        <button type="button" class="btn-octicon btn-octicon-danger disabled tooltipped tooltipped-nw"
+          aria-label="You must be signed in to make or propose changes">
+          <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
+        </button>
+  </div>
+
+  <div class="file-info">
+      35 lines (34 sloc)
+      <span class="file-info-divider"></span>
+    4.37 KB
+  </div>
+</div>
+
+    
+
+  <div itemprop="text" class="blob-wrapper data type-csv">
+      <div class="blob-interaction-bar">
+  <svg aria-hidden="true" class="octicon octicon-search" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"/></svg>
+  <input type="text" name="filter" class="form-control js-csv-filter-field blob-filter" autocapitalize="off"
+         placeholder="Search this file…" aria-label="Search this file…">
+</div>
+
+<div class="markdown-body">
+  <table class="js-csv-data csv-data js-file-line-container">
+    <thead>
+      <tr id="LC1" class="js-file-line">
+        <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <th>contest_effect_id</th>
+        <th>local_language_id</th>
+        <th>flavor_text</th>
+        <th>effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="LC2" class="js-file-line">
+        <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td>1</td>
+        <td>9</td>
+        <td>A highly appealing move.</td>
+        <td>Gives a high number of appeal points wth no other effects.</td>
+      </tr>
+      <tr id="LC3" class="js-file-line">
+        <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td>2</td>
+        <td>9</td>
+        <td>Affected by how well the appeal in front goes.</td>
+        <td>If the Pokémon that appealed before the user earned less than three appeal points, user earns six; if three, user earns three; if more than three, user earns none.</td>
+      </tr>
+      <tr id="LC4" class="js-file-line">
+        <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td>3</td>
+        <td>9</td>
+        <td>After this move, the user is more easily startled.</td>
+        <td>If the user is jammed this turn after using this move, it will receive twice as many jam points.</td>
+      </tr>
+      <tr id="LC5" class="js-file-line">
+        <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td>4</td>
+        <td>9</td>
+        <td>Badly startles the Pokémon in front.</td>
+        <td>Attempts to jam the Pokémon that appealed before the user.</td>
+      </tr>
+      <tr id="LC6" class="js-file-line">
+        <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td>5</td>
+        <td>9</td>
+        <td>Badly startles those that have made appeals.</td>
+        <td>Attempts to jam all Pokémon that have appealed this turn.</td>
+      </tr>
+      <tr id="LC7" class="js-file-line">
+        <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td>6</td>
+        <td>9</td>
+        <td>Jams the others, and misses one turn of appeals.</td>
+        <td>Attempts to jam the other Pokémon.  The user cannot make an appeal on the next turn, but it cannot be jammed either.</td>
+      </tr>
+      <tr id="LC8" class="js-file-line">
+        <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td>7</td>
+        <td>9</td>
+        <td>Makes a great appeal, but allows no more to the end.</td>
+        <td>User cannot make any more appeals for the remainder of the contest.</td>
+      </tr>
+      <tr id="LC9" class="js-file-line">
+        <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td>8</td>
+        <td>9</td>
+        <td>Startles all Pokémon that have done their appeals.</td>
+        <td>Attempts to jam all Pokémon that have appealed this turn.</td>
+      </tr>
+      <tr id="LC10" class="js-file-line">
+        <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td>9</td>
+        <td>9</td>
+        <td>Startles the Pokémon that appealed before the user.</td>
+        <td>Attempts to jam the Pokémon that appealed before the user.</td>
+      </tr>
+      <tr id="LC11" class="js-file-line">
+        <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td>10</td>
+        <td>9</td>
+        <td>Startles the Pokémon that has the judge&#39;s attention.</td>
+        <td>Attempts to jam all Pokémon that have appealed this turn.  If a Pokémon is in combo standby status, it is jammed 5 points instead of 1.</td>
+      </tr>
+      <tr id="LC12" class="js-file-line">
+        <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td>11</td>
+        <td>9</td>
+        <td>The appeal works best the more the crowd is excited.</td>
+        <td>If the Applause meter is empty or at one, earns one point; if two, earns three points; if three, earns four points; if four, earns six points.</td>
+      </tr>
+      <tr id="LC13" class="js-file-line">
+        <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td>12</td>
+        <td>9</td>
+        <td>Works well if it&#39;s the same type as the one before.</td>
+        <td>If the last Pokémon&#39;s appeal is the same type as this move, user earns six points instead of two.</td>
+      </tr>
+      <tr id="LC14" class="js-file-line">
+        <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td>13</td>
+        <td>9</td>
+        <td>An appeal that excites the audience in any contest.</td>
+        <td>Always adds a point to the applause meter, regardless of whether the move matches the contest, and can likewise gain the applause bonus.</td>
+      </tr>
+      <tr id="LC15" class="js-file-line">
+        <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td>14</td>
+        <td>9</td>
+        <td>Badly startles all Pokémon that made good appeals.</td>
+        <td>Attempts to jam all Pokémon that have appealed this turn for half their appeal points (minimum 1).</td>
+      </tr>
+      <tr id="LC16" class="js-file-line">
+        <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td>15</td>
+        <td>9</td>
+        <td>Can avoid being startled by others.</td>
+        <td>Prevents jamming for the rest of this turn.</td>
+      </tr>
+      <tr id="LC17" class="js-file-line">
+        <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td>16</td>
+        <td>9</td>
+        <td>Can avoid being startled by others once.</td>
+        <td>Prevents the next jam on this turn.</td>
+      </tr>
+      <tr id="LC18" class="js-file-line">
+        <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td>17</td>
+        <td>9</td>
+        <td>Can be repeatedly used without boring the judge.</td>
+        <td>Repeated use does not incur a penalty.</td>
+      </tr>
+      <tr id="LC19" class="js-file-line">
+        <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td>18</td>
+        <td>9</td>
+        <td>Makes all Pokémon after the user nervous.</td>
+        <td>Attempts to make all following Pokémon nervous (and thus unable to appeal).</td>
+      </tr>
+      <tr id="LC20" class="js-file-line">
+        <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td>19</td>
+        <td>9</td>
+        <td>Makes the appeal as good as the one before it.</td>
+        <td>User earns appeal points equal to the points the previous Pokémon earned plus one.</td>
+      </tr>
+      <tr id="LC21" class="js-file-line">
+        <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td>20</td>
+        <td>9</td>
+        <td>Makes the appeal as good as those before it.</td>
+        <td>User earns appeal points equal to half the points ALL the previous Pokémon earned plus one.</td>
+      </tr>
+      <tr id="LC22" class="js-file-line">
+        <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td>21</td>
+        <td>9</td>
+        <td>Scrambles up the order of appeals on the next turn.</td>
+        <td>Shuffles the next turn&#39;s turn order.</td>
+      </tr>
+      <tr id="LC23" class="js-file-line">
+        <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td>22</td>
+        <td>9</td>
+        <td>Shifts the judge&#39;s attention from others.</td>
+        <td>Cancels combo standby status for all Pokémon that have appealed this turn.</td>
+      </tr>
+      <tr id="LC24" class="js-file-line">
+        <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td>23</td>
+        <td>9</td>
+        <td>Startles Pokémon that made a same-type appeal.</td>
+        <td>Attempts to jam all Pokémon that have appealed this turn.  If a Pokémon used the same type move as this one, it is jammed for 4 points instead of 1.</td>
+      </tr>
+      <tr id="LC25" class="js-file-line">
+        <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td>24</td>
+        <td>9</td>
+        <td>Temporarily stops the crowd from getting excited.</td>
+        <td>Prevents the Applause Meter from rising for the rest of the turn.</td>
+      </tr>
+      <tr id="LC26" class="js-file-line">
+        <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td>25</td>
+        <td>9</td>
+        <td>The appeal&#39;s quality depends on its timing.</td>
+        <td>Randomly earns one, two, four, or eight points.</td>
+      </tr>
+      <tr id="LC27" class="js-file-line">
+        <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td>26</td>
+        <td>9</td>
+        <td>The appeal works better the later it is performed.</td>
+        <td>If user appeals first this turn, earns one point; if second, two points; if third, four points; if last, six points.</td>
+      </tr>
+      <tr id="LC28" class="js-file-line">
+        <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td>27</td>
+        <td>9</td>
+        <td>The appeal works great if performed first.</td>
+        <td>If user appeals first this turn, earns six points instead of two.</td>
+      </tr>
+      <tr id="LC29" class="js-file-line">
+        <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td>28</td>
+        <td>9</td>
+        <td>The appeal works great if performed last.</td>
+        <td>If user appeals last this turn, earns six points instead of two.</td>
+      </tr>
+      <tr id="LC30" class="js-file-line">
+        <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td>29</td>
+        <td>9</td>
+        <td>The appeal works well if the user&#39;s condition is good.</td>
+        <td>If user has no stars, earns one point; if one, three points; if two, five points; if three, seven points.  This does not include the appeal point bonus the stars give.</td>
+      </tr>
+      <tr id="LC31" class="js-file-line">
+        <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td>30</td>
+        <td>9</td>
+        <td>The next appeal can be made earlier next turn.</td>
+        <td>User will go first next turn.</td>
+      </tr>
+      <tr id="LC32" class="js-file-line">
+        <td id="L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td>31</td>
+        <td>9</td>
+        <td>The next appeal can be made later next turn.</td>
+        <td>User will go last next turn.</td>
+      </tr>
+      <tr id="LC33" class="js-file-line">
+        <td id="L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td>32</td>
+        <td>9</td>
+        <td>Ups the user&#39;s condition.  Helps prevent nervousness.</td>
+        <td>User gains one star.</td>
+      </tr>
+      <tr id="LC34" class="js-file-line">
+        <td id="L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td>33</td>
+        <td>9</td>
+        <td>Worsens the condition of those that made appeals.</td>
+        <td>Removes all stars from all Pokémon that have appealed this turn.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  </div>
+
+  </div>
+
+  <button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="d-none">Jump to Line</button>
+  <div id="jump-to-line" style="display:none">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+      <input class="form-control linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
+      <button type="submit" class="btn">Go</button>
+</form>  </div>
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+    </div>
+  </div>
+
+  </div>
+
+      
+<div class="container site-footer-container">
+  <div class="site-footer " role="contentinfo">
+    <ul class="site-footer-links float-right">
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact GitHub</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage" class="site-footer-mark" title="GitHub">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2017 <span title="0.10574s from github-fe153-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+    You can't perform that action at this time.
+  </div>
+
+
+    <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/compat-91f98c37fc84eac24836eec2567e9912742094369a04c4eba6e3cd1fa18902d9.js"></script>
+    <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-b9f891faa0e9caf23b90af04c6633548c9b4069fd1fc72bbfca809d70f0d8172.js"></script>
+    
+    <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-29b5a05e160bbd32d7954e3dc723b01042a1917f39539e6bcdf62af7faf606e5.js"></script>
+    
+    
+    
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+  </div>
+</div>
+
+
+  </body>
+</html>
+
