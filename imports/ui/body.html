@@ -1,0 +1,19 @@
+<template name="base">
+    {{> loginButtons}}
+
+    {{> Template.dynamic template=main}}
+</template>
+
+<template name="index">
+    {{#if currentUser}}
+        <form class="new-lobby">
+            <input type="submit" value="new game">
+        </form>
+    {{/if}}
+    <ul>
+        {{#each games}}
+            {{>game}}
+        {{/each}}
+    </ul>
+</template>
+

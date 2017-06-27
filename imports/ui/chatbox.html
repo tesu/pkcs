@@ -1,0 +1,11 @@
+<template name="chatbox">
+    <form class="chat-box">
+        <input type="text" name="text" placeholder="chatbox">
+    </form>
+    <ul>
+        {{#each chat}}
+        <li><strong>[{{this.createdAt}}] {{username}}:</strong> {{this.text}}</li>
+        {{/each}}
+    </ul>
+</template>
+

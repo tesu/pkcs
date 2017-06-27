@@ -1,0 +1,46 @@
+<template name="game_page">
+    <h1>Lobby {{game._id}}</h1>
+    current state: {{game.state}}
+    {{#if isHost}}
+        you are the host
+        {{#if stateIsPreparation}}        
+        <form class="start-game">
+            <input type="submit" value="start game">
+        </form>
+        {{/if}}
+        <form class="delete-game">
+            <input type="submit" value="cancel game">
+        </form>
+    {{/if}}
+    {{#if isInGame}}
+        you are in this game
+    {{else}}
+        you are not in this game
+        {{#if canJoinGame}}
+            <form class="join-game">
+                <input type="submit" value="join game">
+            </form>
+        {{/if}}
+    {{/if}}
+    {{#if canMove}}
+        <form class="action">
+            <button type="submit" name="action" value="rock">Rock</button>
+            <button type="submit" name="action" value="paper">Paper</button>
+            <button type="submit" name="action" value="scissors">Scissors</button>
+        </form>
+    {{/if}}
+    {{#each results}}
+        {{this.result}}
+    {{/each}}
+    <ul>
+        {{#each game.players}}
+        <li>{{>player}}</li>
+        {{/each}}
+        {{#each emptySlots}}
+        <li>empty</li>
+        {{/each}}
+    </ul>
+    {{>chatbox game=game._id}}
+    <a href="/">back to home</a>
+</template>
+
