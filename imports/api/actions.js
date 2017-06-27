@@ -43,7 +43,6 @@ Meteor.methods({
                 }
                 o += actions[i].user + " won " + w + " games and lost " + l + " games. ";
             }
-            console.log(o)
 
             Results.insert({
                 game: game._id,

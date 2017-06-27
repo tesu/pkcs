@@ -22,12 +22,7 @@ Template.chatbox.events({
 
         const text = event.target.text.value;
         
-        Chat.insert({
-            text,
-            createdAt: new Date(),
-            user: Meteor.userId(),
-            game: FlowRouter.getParam('_id'),
-        });
+        Meteor.call('chat.insert', FlowRouter.getParam('_id'), text);
 
         event.target.text.value = '';
     },
