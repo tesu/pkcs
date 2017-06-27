@@ -14,15 +14,16 @@ Template.index.helpers({
 });
 
 Template.base.events({
-    'submit .new-lobby'(event) {
+    'submit .new-game'(event) {
         event.preventDefault();
 
-        Games.insert({
-            createdAt: new Date(),
-            host: Meteor.userId(),
-            players: [Meteor.userId()],
-            state: 0,
-        });
+        Meteor.call('games.insert');
+        // Games.insert({
+        //     createdAt: new Date(),
+        //     host: Meteor.userId(),
+        //     players: [Meteor.userId()],
+        //     state: 0,
+        // });
     },
 });
 
