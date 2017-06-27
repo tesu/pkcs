@@ -3,6 +3,15 @@ import {check} from 'meteor/check';
 
 export const Games = new Mongo.Collection('games');
 
+if (Meteor.isServer) {
+    Meteor.publish('games', function gamesPub() {
+        return Games.find({});
+    });
+    Meteor.publish('game', function gamePub(id) {
+        return Games.find(id);
+    });
+}
+
 Meteor.methods({
     'games.insert'() {
         if (!Meteor.userId()) throw new Meteor.Error('not-authorized');
@@ -34,3 +43,4 @@ Meteor.methods({
         Games.remove(id);
     },
 });
+

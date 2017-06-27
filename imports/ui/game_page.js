@@ -8,6 +8,21 @@ import './player.js';
 import './chatbox.js';
 import './game_page.html';
 
+let sub = Array();
+Template.game_page.onCreated(function bodyOnCreated() {
+    sub.push(Meteor.subscribe('game', FlowRouter.getParam('_id')));
+    sub.push(Meteor.subscribe('chat', FlowRouter.getParam('_id')));
+    sub.push(Meteor.subscribe('actions', FlowRouter.getParam('_id')));
+    sub.push(Meteor.subscribe('results', FlowRouter.getParam('_id')));
+});
+
+Template.game_page.onDestroyed(function bodyOnDestroyed() {
+    for (let i = 0; i < sub.length; i++) {
+        sub[i].stop();
+    }
+    sub.length = 0;
+});
+
 Template.game_page.helpers({
     game() {
         return Games.findOne({_id: FlowRouter.getParam('_id')});

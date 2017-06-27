@@ -7,10 +7,20 @@ import './game.js';
 import './game_page.js';
 import './body.html';
 
+let sub;
+
+Template.index.onCreated(function indexOnCreated() {
+    sub = Meteor.subscribe('games');
+});
+
 Template.index.helpers({
     games() {
         return Games.find({});
     },
+});
+
+Template.index.onDestroyed(function indexOnDestroyed() {
+    sub.stop();
 });
 
 Template.base.events({
@@ -18,12 +28,6 @@ Template.base.events({
         event.preventDefault();
 
         Meteor.call('games.insert');
-        // Games.insert({
-        //     createdAt: new Date(),
-        //     host: Meteor.userId(),
-        //     players: [Meteor.userId()],
-        //     state: 0,
-        // });
     },
 });
 
