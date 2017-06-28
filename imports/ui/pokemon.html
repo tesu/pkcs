@@ -1,4 +1,8 @@
 <template name="pokemon">
-    pokemon template
+    <ol>
+        {{#each pokemonList}}
+        <li>{{this.identifier}}</li>
+        {{/each}}
+    </ol>
 </template>
 

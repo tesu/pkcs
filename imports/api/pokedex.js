@@ -3,47 +3,52 @@ import {check} from 'meteor/check';
 
 export let Pokedex = {};
 
-if (Meteor.isServer) {
-    files = ['contest_combos', 
-        'contest_effect_prose',
-        'contest_effects',
-        'contest_types',
-        'moves',
-        'pokemon',
-    ];
+Pokedex._files = [
+    'contest_combos', 
+    'contest_effect_prose',
+    'contest_effects',
+    'contest_types',
+    'moves',
+    'pokemon',
+];
+Pokedex._collections = {}
+for (let i=0; i<Pokedex._files.length; i++) {
+    Pokedex._collections[Pokedex._files[i]] = new Mongo.Collection(Pokedex._files[i]);
+}
 
+if (Meteor.isServer) {
     let imported = true;
-    for (let i=0; i<files.length; i++) {
-        Pokedex[files[i]] = new Mongo.Collection(files[i]);
-        if (Pokedex[files[i]].find({}).count() <= 0) {
-            let file = Assets.getText('data/'+files[i]+'.csv');
-            Papa.parse(file, {
+    for (let i=0; i<Pokedex._files.length; i++) {
+        if (Pokedex._collections[Pokedex._files[i]].find({}).count() <= 0) {
+            let file = Assets.getText('data/'+Pokedex._files[i]+'.csv');
+            const results = Papa.parse(file, {
                 header: true,
                 dynamicTyping: true,
-                complete(results, file) {
-                    for (let j=0; j<results.data.length; j++)
-                        Pokedex[files[i]].insert(results.data[j]);
-                },
             });
-            console.log('Imported '+files[i]+'.csv!');
-            if (files[i] == 'pokemon') imported = false;
+            for (let j=0; j<results.data.length; j++) {
+                Pokedex._collections[Pokedex._files[i]].insert(results.data[j]);
+            }
+            console.log('Imported '+Pokedex._files[i]+'.csv!');
+            if (Pokedex._files[i] == 'pokemon') imported = false;
         }
     }
     if (!imported) {
         let file = Assets.getText('data/pokemon_moves.csv');
-        Papa.parse(file, {
+        const results = Papa.parse(file, {
             header: true,
             dynamicTyping: true,
-            complete(results, file) {
-                for (let j=0; j<results.data.length; j++) {
-                    Pokedex['pokemon'].update({id: results.data[j]}, {
-                        $push: {moves: results.data[j]['move_id']}
-                    });
-                    if (j%1000==0) console.log(j+'/'+results.data.length+' done importing');
-                }
-            }
         });
+        for (let j=0; j<results.data.length; j++) {
+            Pokedex._collections['pokemon'].update({id: results.data[j]}, {
+                $push: {moves: results.data[j]['move_id']}
+            });
+            if (j%1000==0) console.log(j+'/'+results.data.length+' done importing');
+        }
     }
+
+    Meteor.publish('pokemon', function pokPub() {
+        return Pokedex._collections['pokemon'].find({id: {$lt: 10000}});
+    });
 }
 
 Meteor.methods({
