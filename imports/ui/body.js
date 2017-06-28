@@ -5,6 +5,7 @@ import {Games} from '../api/games.js';
 
 import './game.js';
 import './game_page.js';
+import './pokemon.js';
 import './body.html';
 
 let sub;
