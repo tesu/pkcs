@@ -1,34 +1,44 @@
 <template name="pokemon">
     <a href="/">index</a>
-    <select class="pokemon">
-        {{#each pokemonList}}
-        <option value="{{this.identifier}}">{{name}}</option>
-        {{else}}
-        {{/each}}
-    </select>
-    <select class="move move1">
-        {{#each moveList}}
-        <option value="{{this.identifier}}">{{name}}</option>
-        {{else}}
-        {{/each}}
-    </select>
-    <select class="move move2">
-        {{#each moveList}}
-        <option value="{{this.identifier}}">{{name}}</option>
-        {{else}}
-        {{/each}}
-    </select>
-    <select class="move move3">
-        {{#each moveList}}
-        <option value="{{this.identifier}}">{{name}}</option>
-        {{else}}
-        {{/each}}
-    </select>
-    <select class="move move4">
-        {{#each moveList}}
-        <option value="{{this.identifier}}">{{name}}</option>
-        {{else}}
-        {{/each}}
-    </select>
+    {{>pokemon_embed new=true}}
+    {{#each myPokemon}}
+        {{>pokemon_embed id=this._id}}
+    {{/each}}
 </template>
 
+<template name="pokemon_embed">
+    <form id="{{#if id}}{{id}}{{/if}}{{#if new}}new{{/if}}">
+        <input type="text" name="nickname" placeholder="nickname">
+        <select name="pokemon" class="pokemon">
+            {{#each pokemonList}}
+            <option value="{{this.identifier}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <select class="move" name="move1">
+            {{#each moveList}}
+            <option value="{{this.identifier}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <select class="move" name="move2">
+            {{#each moveList}}
+            <option value="{{this.identifier}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <select class="move" name="move3">
+            {{#each moveList}}
+            <option value="{{this.identifier}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <select class="move" name="move4">
+            {{#each moveList}}
+            <option value="{{this.identifier}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <input type="number" name="cool" placeholder="cool condition" min=0 max=255>
+        <input type="number" name="beauty" placeholder="beauty condition" min=0 max=255>
+        <input type="number" name="cute" placeholder="cute condition" min=0 max=255>
+        <input type="number" name="smart" placeholder="smart condition" min=0 max=255>
+        <input type="number" name="tough" placeholder="tough condition" min=0 max=255>
+        <button type="submit">{{#if new}}Save{{else}}Update{{/if}}</button>
+    </form>
+</template>
