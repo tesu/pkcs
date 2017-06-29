@@ -55,13 +55,8 @@ if (Meteor.isServer) {
 }
 
 Pokedex.validMoves = function(pokemon) {
-    return Pokedex._collections.pokemon.findOne({identifier: pokemon},
-        { $lookup: {
-            from: "moves",
-            localField: "moves",
-            foreignField: "id",
-            as: "validMoves",
-        }});
+    const p = Pokedex._collections.pokemon.findOne({identifier: pokemon});
+    return p && p.moves && Pokedex._collections.moves.find({id: {$in: p.moves}});
 }
 Pokedex.eligibleMove = function(pokemon, move) {
     

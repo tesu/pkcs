@@ -7,37 +7,30 @@ import './pokemon.html';
 
 Template.pokemon.onCreated(function() {
     Meteor.subscribe('pokemon');
+    Meteor.subscribe('moves');
 
-    this.pokemon = new ReactiveDict();
-});
-
-Template.pokemon.onRendered(function() {
-    //function pokemonList() {
-    //    const p = Pokedex._collections['pokemon'].find().fetch();
-    //    console.log(p)
-    //    o = []
-    //    for (let i=0; i<p.length; i++) o[i] = {value: p[i], label: p[i]}
-    //    return o
-    //}
-    //$('.selectize').selectize({
-    //    options: pokemonList(),
-    //    sortField: 'text',
-    //});
-    $('.pokemon').change(function() {
-        console.log(this.value);
-
-        this.state.set('pokemon', this.value);
-    });
+    this.state = new ReactiveDict();
+    this.state.set('pokemon', 'bulbasaur');
 });
 
 Template.pokemon.helpers({
+    name() {
+        return this.identifier.split('-').map(function(str) {
+            return str.charAt(0).toUpperCase()+str.slice(1);
+        }).join(' ');
+    },
     pokemonList() {
         return Pokedex._collections['pokemon'].find();
     },
     moveList() {
-        console.log(Pokedex.validMoves('bulbasaur'))
-        return Pokedex.validMoves('bulbasaur');
+        return Pokedex.validMoves(Template.instance().state.get('pokemon'));
     },
 });
 
+Template.pokemon.events({
+    'change .pokemon'(event, instance) {
+        instance.state.set('pokemon', event.target.value);
+    }
+
+})
 
