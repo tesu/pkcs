@@ -1,8 +1,34 @@
 <template name="pokemon">
-    <ol>
+    <a href="/">index</a>
+    <select class="pokemon">
         {{#each pokemonList}}
-        <li>{{this.identifier}}</li>
+        <option value="{{this.identifier}}">{{this.identifier}}</option>
+        {{else}}
         {{/each}}
-    </ol>
+    </select>
+    <select class="move move1">
+        {{#each moveList}}
+        <option value="{{this.identifier}}">{{this.identifier}}</option>
+        {{else}}
+        {{/each}}
+    </select>
+    <select class="move move2">
+        {{#each moveList}}
+        <option value="{{this.identifier}}">{{this.identifier}}</option>
+        {{else}}
+        {{/each}}
+    </select>
+    <select class="move move3">
+        {{#each moveList}}
+        <option value="{{this.identifier}}">{{this.identifier}}</option>
+        {{else}}
+        {{/each}}
+    </select>
+    <select class="move move4">
+        {{#each moveList}}
+        <option value="{{this.identifier}}">{{this.identifier}}</option>
+        {{else}}
+        {{/each}}
+    </select>
 </template>
 

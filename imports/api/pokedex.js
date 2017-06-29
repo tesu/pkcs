@@ -39,16 +39,32 @@ if (Meteor.isServer) {
             dynamicTyping: true,
         });
         for (let j=0; j<results.data.length; j++) {
-            Pokedex._collections['pokemon'].update({id: results.data[j]}, {
+            Pokedex._collections['pokemon'].update({id: results.data[j]['pokemon_id']}, {
                 $push: {moves: results.data[j]['move_id']}
             });
             if (j%1000==0) console.log(j+'/'+results.data.length+' done importing');
         }
     }
 
-    Meteor.publish('pokemon', function pokPub() {
+    Meteor.publish('pokemon', function pokePub() {
         return Pokedex._collections['pokemon'].find({id: {$lt: 10000}});
     });
+    Meteor.publish('moves', function movePub() {
+        return Pokedex._collections['moves'].find();
+    });
+}
+
+Pokedex.validMoves = function(pokemon) {
+    return Pokedex._collections.pokemon.findOne({identifier: pokemon},
+        { $lookup: {
+            from: "moves",
+            localField: "moves",
+            foreignField: "id",
+            as: "validMoves",
+        }});
+}
+Pokedex.eligibleMove = function(pokemon, move) {
+    
 }
 
 Meteor.methods({
