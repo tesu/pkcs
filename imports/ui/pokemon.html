@@ -1,8 +1,8 @@
 <template name="pokemon">
     <a href="/">index</a>
-    {{>pokemon_embed new=true}}
+    {{>pokemon_embed new=true pokemon=defaultPokemon}}
     {{#each myPokemon}}
-        {{>pokemon_embed id=this._id}}
+        {{>pokemon_embed id=this._id pokemon=pokemonData}}
     {{/each}}
 </template>
 
@@ -10,35 +10,35 @@
     <form id="{{#if id}}{{id}}{{/if}}{{#if new}}new{{/if}}">
         <input type="text" name="nickname" placeholder="nickname">
         <select name="pokemon" class="pokemon">
-            {{#each pokemonList}}
-            <option value="{{this.identifier}}">{{name}}</option>
+            {{#each p in pokemonList}}
+            <option value="{{p.identifier}}" selected={{isEqual p.identifier pokemon.identifier}}>{{name p.identifier}}</option>
             {{/each}}
         </select>
         <select class="move" name="move1">
-            {{#each moveList}}
-            <option value="{{this.identifier}}">{{name}}</option>
+            {{#each m in moveList}}
+            <option value="{{m.identifier}}" selected={{isEqualArray m.identifier pokemon.moves 0}}>{{name m.identifier}}</option>
             {{/each}}
         </select>
         <select class="move" name="move2">
-            {{#each moveList}}
-            <option value="{{this.identifier}}">{{name}}</option>
+            {{#each m in moveList}}
+            <option value="{{m.identifier}}" selected={{isEqualArray m.identifier pokemon.moves 1}}>{{name m.identifier}}</option>
             {{/each}}
         </select>
         <select class="move" name="move3">
-            {{#each moveList}}
-            <option value="{{this.identifier}}">{{name}}</option>
+            {{#each m in moveList}}
+            <option value="{{m.identifier}}" selected={{isEqualArray m.identifier pokemon.moves 2}}>{{name m.identifier}}</option>
             {{/each}}
         </select>
         <select class="move" name="move4">
-            {{#each moveList}}
-            <option value="{{this.identifier}}">{{name}}</option>
+            {{#each m in moveList}}
+            <option value="{{m.identifier}}" selected={{isEqualArray m.identifier pokemon.moves 3}}>{{name m.identifier}}</option>
             {{/each}}
         </select>
-        <input type="number" name="cool" placeholder="cool condition" min=0 max=255>
-        <input type="number" name="beauty" placeholder="beauty condition" min=0 max=255>
-        <input type="number" name="cute" placeholder="cute condition" min=0 max=255>
-        <input type="number" name="smart" placeholder="smart condition" min=0 max=255>
-        <input type="number" name="tough" placeholder="tough condition" min=0 max=255>
+        <input type="number" name="cool" placeholder="cool condition" min=0 max=255 value={{pokemon.condition.cool}}>
+        <input type="number" name="beauty" placeholder="beauty condition" min=0 max=255 value={{pokemon.condition.beauty}}>
+        <input type="number" name="cute" placeholder="cute condition" min=0 max=255 value={{pokemon.condition.cute}}>
+        <input type="number" name="smart" placeholder="smart condition" min=0 max=255 value={{pokemon.condition.smart}}>
+        <input type="number" name="tough" placeholder="tough condition" min=0 max=255 value={{pokemon.condition.tough}}>
         <button type="submit">{{#if new}}Save{{else}}Update{{/if}}</button>
     </form>
 </template>

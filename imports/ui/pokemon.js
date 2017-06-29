@@ -16,6 +16,29 @@ Template.pokemon.helpers({
     myPokemon() {
         return Pokemon.find({});
     },
+    pokemonData() {
+        return Pokemon.findOne(this._id);
+    },
+    defaultPokemon() {
+        return {
+            nickname: '',
+            owner: Meteor.userId(),
+            identifier: 'bulbasaur',
+            moves: [
+                'swords-dance',
+                'cut',
+                'bind',
+                'vine-whip',
+            ],
+            condition: {
+                cool: 255,
+                beauty: 255,
+                cute: 255,
+                smart: 255,
+                tough: 255, 
+            }
+        };
+    },
 });
 
 Template.pokemon_embed.onCreated(function() {
@@ -23,18 +46,12 @@ Template.pokemon_embed.onCreated(function() {
     Meteor.subscribe('moves');
 
     this.state = new ReactiveDict();
-    if (this.data.id) {
-        p = Pokemon.findOne(this.data.id);
-        console.log(p);
-        this.state.set('pokemon', p.identifier);
-    } else {
-        this.state.set('pokemon', 'bulbasaur');
-    }
+    this.state.set('pokemon', this.data.pokemon);
 });
 
 Template.pokemon_embed.helpers({
-    name() {
-        return this.identifier.split('-').map(function(str) {
+    name(s) {
+        return s.split('-').map(function(str) {
             return str.charAt(0).toUpperCase()+str.slice(1);
         }).join(' ');
     },
@@ -43,13 +60,23 @@ Template.pokemon_embed.helpers({
             fields: {identifier: 1}});
     },
     moveList() {
-        return Pokedex.validMoves(Template.instance().state.get('pokemon'));
+        return Pokedex.validMoves(Template.instance().state.get('pokemon').identifier);
+    },
+    isEqual(a, b) {
+        return a===b;
+    },
+    isEqualArray(a, b, c) {
+        console.log(b[c])
+        if (a===b[c]) console.log(a)
+        return a===b[c];
     },
 });
 
 Template.pokemon_embed.events({
     'change .pokemon'(event, instance) {
-        instance.state.set('pokemon', event.target.value);
+        p = instance.state.get('pokemon');
+        p.identifier = event.target.value;
+        instance.state.set('pokemon', p);
     },
     'submit'(event) {
         event.preventDefault();
