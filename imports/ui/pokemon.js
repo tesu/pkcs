@@ -76,6 +76,10 @@ Template.pokemon_embed.events({
         p.identifier = event.target.value;
         instance.state.set('pokemon', p);
     },
+    'click .delete'(event, instance) {
+        const id = event.target.value;
+        Meteor.call('pokemon.delete', id);
+    },
     'submit'(event) {
         event.preventDefault();
         const f = event.target;

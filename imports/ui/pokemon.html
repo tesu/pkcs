@@ -8,7 +8,7 @@
 
 <template name="pokemon_embed">
     <form id="{{#if id}}{{id}}{{/if}}{{#if new}}new{{/if}}">
-        <input type="text" name="nickname" placeholder="nickname">
+        <input type="text" name="nickname" placeholder="nickname" value="{{pokemon.nickname}}">
         <select name="pokemon" class="pokemon">
             {{#each p in pokemonList}}
             <option value="{{p.identifier}}" selected={{isEqual p.identifier pokemon.identifier}}>{{name p.identifier}}</option>
@@ -40,5 +40,6 @@
         <input type="number" name="smart" placeholder="smart condition" min=0 max=255 value={{pokemon.condition.smart}}>
         <input type="number" name="tough" placeholder="tough condition" min=0 max=255 value={{pokemon.condition.tough}}>
         <button type="submit">{{#if new}}Save{{else}}Update{{/if}}</button>
+        {{#unless new}}<button type="button" class="delete" value="{{id}}">X</button>{{/unless}}
     </form>
 </template>

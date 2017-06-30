@@ -20,5 +20,8 @@ Meteor.methods({
             $set: pokemon
         });
     },
+    'pokemon.delete'(id) {
+        Pokemon.remove(id);
+    },
 });
 
