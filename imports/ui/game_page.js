@@ -3,6 +3,8 @@ import {Template} from 'meteor/templating';
 import {Games} from '../api/games.js';
 import {Actions} from '../api/actions.js';
 import {Results} from '../api/results.js';
+import {Pokemon} from '../api/pokemon.js';
+import {Pokedex} from '../api/pokedex.js';
 
 import './player.js';
 import './chatbox.js';
@@ -14,6 +16,8 @@ Template.game_page.onCreated(function bodyOnCreated() {
     sub.push(Meteor.subscribe('chat', FlowRouter.getParam('_id')));
     sub.push(Meteor.subscribe('actions', FlowRouter.getParam('_id')));
     sub.push(Meteor.subscribe('results', FlowRouter.getParam('_id')));
+    sub.push(Meteor.subscribe('pokemon_instances'));
+    sub.push(Meteor.subscribe('moves'));
 });
 
 Template.game_page.onDestroyed(function bodyOnDestroyed() {
@@ -24,6 +28,11 @@ Template.game_page.onDestroyed(function bodyOnDestroyed() {
 });
 
 Template.game_page.helpers({
+    name(s) {
+        return s.split('-').map(function(str) {
+            return str.charAt(0).toUpperCase()+str.slice(1);
+        }).join(' ');
+    },
     game() {
         return Games.findOne({_id: FlowRouter.getParam('_id')});
     },
@@ -45,9 +54,15 @@ Template.game_page.helpers({
         return null;
     },
     canMove() {
-        const game = Games.findOne({_id: FlowRouter.getParam('_id')});
+        const game = Games.findOne({_id: FlowRouter.getParam('_id'), players: Meteor.userId()});
         if (game) return game.state > 0 && Actions.find({user: Meteor.userId(), turn: game.turn, game: game._id}, {limit: 1}).count(true) == 0;
         return null;
+    },
+    moves() {
+        const game = Games.findOne({_id: FlowRouter.getParam('_id')});
+        if (!game) return;
+        const p = Pokemon.findOne({_id: game.pokemon[Meteor.userId()]});
+        return p && p.moves;
     },
     results() {
         return Results.find({game:FlowRouter.getParam('_id')});
@@ -91,7 +106,6 @@ Template.game_page.events({
         const action = event.target.value;
 
         Meteor.call('actions.insert', game, action);
-
     },
 });
 

@@ -2,7 +2,6 @@
     <h1>Lobby {{game._id}}</h1>
     current state: {{game.state}}
     {{#if isHost}}
-        you are the host
         {{#if stateIsPreparation}}        
         <form class="start-game">
             <input type="submit" value="start game">
@@ -24,9 +23,9 @@
     {{/if}}
     {{#if canMove}}
         <form class="action">
-            <button type="submit" name="action" value="rock">Rock</button>
-            <button type="submit" name="action" value="paper">Paper</button>
-            <button type="submit" name="action" value="scissors">Scissors</button>
+            {{#each move in moves}}
+            <button type="submit" name="action" value="{{move}}">{{name move}}</button>
+            {{/each}}
         </form>
     {{/if}}
     {{#each results}}
