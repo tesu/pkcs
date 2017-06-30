@@ -8,7 +8,25 @@
     {{#if currentUser}}
         <a href="/pokemon">edit pokemon</a>
         <form class="new-game">
-            <input type="submit" value="new game">
+            <select name="pokemon">
+                {{#each p in pokemon}}
+                <option value="{{p._id}}">{{p.nickname}}</option>
+                {{/each}}
+            </select>
+            <select name="rank">
+                <option value="normal">Normal</option>
+                <option value="super">Super</option>
+                <option value="hyper">Hyper</option>
+                <option value="master">Master</option>
+            </select>
+            <select name="category">
+                <option value="cool">Cool</option>
+                <option value="beauty">Beauty</option>
+                <option value="cute">Cute</option>
+                <option value="smart">Smart</option>
+                <option value="tough">Tough</option>
+            </select>
+            <input type="submit" value="Create Game">
         </form>
     {{/if}}
     <ul>

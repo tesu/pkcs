@@ -13,13 +13,20 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-    'games.insert'() {
+    'games.insert'(r, c, pid) {
         if (!Meteor.userId()) throw new Meteor.Error('not-authorized');
 
+        p = {};
+        p[Meteor.userId()] = pid;
         Games.insert({
             createdAt: new Date(),
             host: Meteor.userId(),
             players: [Meteor.userId()],
+            max: 4,
+            min: 1,
+            rank: r,
+            category: c,
+            pokemon: p,
             state: 0,
         });
     },

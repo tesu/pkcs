@@ -95,7 +95,8 @@ Template.pokemon_embed.events({
                 f.move4.value,
             ],
             condition: {
-                cool: f.cool.value, beauty: f.beauty.value,
+                cool: f.cool.value,
+                beauty: f.beauty.value,
                 cute: f.cute.value,
                 smart: f.smart.value,
                 tough: f.tough.value,
