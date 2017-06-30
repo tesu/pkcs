@@ -40,7 +40,7 @@ if (Meteor.isServer) {
         });
         for (let j=0; j<results.data.length; j++) {
             Pokedex._collections['pokemon'].update({id: results.data[j]['pokemon_id']}, {
-                $push: {moves: results.data[j]['move_id']}
+                $addToSet: {moves: results.data[j]['move_id']}
             });
             if (j%1000==0) console.log(j+'/'+results.data.length+' done importing');
         }
