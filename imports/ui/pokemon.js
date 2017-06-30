@@ -66,8 +66,6 @@ Template.pokemon_embed.helpers({
         return a===b;
     },
     isEqualArray(a, b, c) {
-        console.log(b[c])
-        if (a===b[c]) console.log(a)
         return a===b[c];
     },
 });
@@ -103,7 +101,24 @@ Template.pokemon_embed.events({
             };
             Meteor.call('pokemon.insert', p)
         } else {
-
+            p = {
+                nickname: f.nickname.value,
+                identifier: f.pokemon.value,
+                moves: [
+                    f.move1.value,
+                    f.move2.value,
+                    f.move3.value,
+                    f.move4.value,
+                ],
+                condition: {
+                    cool: f.cool.value,
+                    beauty: f.beauty.value,
+                    cute: f.cute.value,
+                    smart: f.smart.value,
+                    tough: f.tough.value,
+                }
+            };
+            Meteor.call('pokemon.update', event.target.id, p)
         }
 
     },

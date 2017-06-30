@@ -14,6 +14,11 @@ if (Meteor.isServer) {
 Meteor.methods({
     'pokemon.insert'(pokemon) {
         Pokemon.insert(pokemon); 
-    }
+    },
+    'pokemon.update'(id, pokemon) {
+        Pokemon.update(id, {
+            $set: pokemon
+        });
+    },
 });
 
