@@ -68,9 +68,6 @@ Template.game_page.helpers({
         const p = Pokemon.findOne({_id: game.pokemon[Meteor.userId()]});
         return p && p.moves;
     },
-    results() {
-        return Results.find({game:FlowRouter.getParam('_id')});
-    },
     actions() {
         return Actions.find({game:FlowRouter.getParam('_id')});
     },

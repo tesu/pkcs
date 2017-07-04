@@ -59,14 +59,9 @@ Meteor.methods({
             //    o += actions[i].user + " won " + w + " games and lost " + l + " games. ";
             //}
 
-            Results.insert({
-                game: game._id,
-                turn: game.turn,
-                result: o,
-            });
-
             Games.update({_id: game._id}, {
                 $inc: {turn: 1},
+                $push: {messages: o},
             });
         }
    },
