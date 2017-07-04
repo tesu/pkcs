@@ -34,27 +34,27 @@ Template.game_page.helpers({
         }).join(' ');
     },
     game() {
-        return Games.findOne({_id: FlowRouter.getParam('_id')});
+        return Games.findOne(FlowRouter.getParam('_id'));
     },
     isHost() {
-        const game = Games.findOne({_id: FlowRouter.getParam('_id')});
+        const game = Games.findOne(FlowRouter.getParam('_id'));
         return game && game.host == Meteor.userId();
     },
     isInGame() {
-        const game = Games.findOne({_id: FlowRouter.getParam('_id')});
+        const game = Games.findOne(FlowRouter.getParam('_id'));
         return game && game.players.indexOf(Meteor.userId()) > -1;
     },
     canJoinGame() {
-        const game = Games.findOne({_id: FlowRouter.getParam('_id')});
+        const game = Games.findOne(FlowRouter.getParam('_id'));
         return game && Meteor.userId() && game.players.length < 4 && game.players.indexOf(Meteor.userId()) == -1;
     },
     stateIsPreparation() {
-        const game = Games.findOne({_id: FlowRouter.getParam('_id')});
+        const game = Games.findOne(FlowRouter.getParam('_id'));
         if (game) return game.state == 0;
         return null;
     },
     messages() {
-        const game = Games.findOne({_id: FlowRouter.getParam('_id')});
+        const game = Games.findOne(FlowRouter.getParam('_id'));
         return game && game.messages;
     },
     canMove() {
@@ -63,7 +63,7 @@ Template.game_page.helpers({
         return null;
     },
     moves() {
-        const game = Games.findOne({_id: FlowRouter.getParam('_id')});
+        const game = Games.findOne(FlowRouter.getParam('_id'));
         if (!game) return;
         const p = Pokemon.findOne({_id: game.pokemon[Meteor.userId()]});
         return p && p.moves;
@@ -75,7 +75,7 @@ Template.game_page.helpers({
         return Actions.find({game:FlowRouter.getParam('_id')});
     },
     emptySlots() {
-        const game = Games.findOne({_id: FlowRouter.getParam('_id')});
+        const game = Games.findOne(FlowRouter.getParam('_id'));
         if (game) {
             var o = Array();
             for (var i = 0; i < 4-game.players.length; i++) {
