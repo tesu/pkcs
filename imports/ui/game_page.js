@@ -53,6 +53,10 @@ Template.game_page.helpers({
         if (game) return game.state == 0;
         return null;
     },
+    messages() {
+        const game = Games.findOne({_id: FlowRouter.getParam('_id')});
+        return game && game.messages;
+    },
     canMove() {
         const game = Games.findOne({_id: FlowRouter.getParam('_id'), players: Meteor.userId()});
         if (game) return game.state > 0 && Actions.find({user: Meteor.userId(), turn: game.turn, game: game._id}, {limit: 1}).count(true) == 0;
