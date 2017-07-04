@@ -1,7 +1,6 @@
 import {Mongo} from 'meteor/mongo';
 import {check} from 'meteor/check';
 
-import {Results} from './results.js';
 import {Games} from './games.js';
 import {Pokedex} from './pokedex.js';
 

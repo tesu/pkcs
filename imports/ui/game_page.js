@@ -2,7 +2,6 @@ import {Template} from 'meteor/templating';
 
 import {Games} from '../api/games.js';
 import {Actions} from '../api/actions.js';
-import {Results} from '../api/results.js';
 import {Pokemon} from '../api/pokemon.js';
 import {Pokedex} from '../api/pokedex.js';
 
