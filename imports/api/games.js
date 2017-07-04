@@ -63,7 +63,7 @@ Meteor.methods({
         let message = '';
         
         for (let i=0; i<order.length; i++) {
-            message += order[i] + ' is #' + (i+1) + ' with a score of ' + scores[order[i]] + '.\n'
+            message += order[i] + ' received ' + scoreToHearts(game.rank, scores[order[i]]) + ' hearts and is #' + (i+1) + '.\n'
         }
 
 
