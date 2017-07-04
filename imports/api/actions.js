@@ -35,29 +35,6 @@ Meteor.methods({
                 o += '\n';
             }
 
-            //function x(xd) {
-            //    switch (xd) {
-            //        case "rock":
-            //            return 0;
-            //        case "paper":
-            //            return 1;
-            //        case "scissors":
-            //            return 2;
-            //    }
-            //}
-            //o = "Turn " + game.turn + ": ";
-            //for (let i=0; i<actions.length; i++) {
-            //    let w = l = 0;
-            //    for (let j=0; j<actions.length; j++) {
-            //        if (i==j) continue;
-
-            //        const r = (x(actions[i].action)*2+x(actions[j].action))%3;
-            //        if (r == 1) l++;
-            //        if (r == 2) w++;
-            //    }
-            //    o += actions[i].user + " won " + w + " games and lost " + l + " games. ";
-            //}
-
             Games.update({_id: game._id}, {
                 $inc: {turn: 1},
                 $push: {messages: o},
