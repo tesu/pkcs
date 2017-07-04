@@ -61,6 +61,31 @@ Pokedex.validMoves = function(pokemon) {
 Pokedex.eligibleMove = function(pokemon, move) {
     
 }
+function idToCategory(i) {
+    switch (i) {
+        case 1:
+            return 'cool';
+        case 2:
+            return 'beauty';
+        case 3:
+            return 'cute';
+        case 4:
+            return 'smart';
+        case 5:
+        default:
+            return 'tough';
+    }
+}
+Pokedex.moveData = function(move) {
+    const m = Pokedex._collections.moves.findOne({identifier: move});
+    if (!m) return null;
+    let x = m.identifier + ' is a ' + idToCategory(m.contest_type_id) + ' move';
+    const ce = Pokedex._collections.contest_effects.findOne({id: m.contest_effect_id});
+    const cep = Pokedex._collections.contest_effect_prose.findOne({contest_effect_id: m.contest_effect_id});
+    if (!ce || !cep) return x;
+    return x + ' with ' + ce.appeal + ' appeal and ' + ce.jam + ' jam, with the effect ' + cep.effect;
+    // cep.flavor_text used eventually
+}
 
 Meteor.methods({
 });
