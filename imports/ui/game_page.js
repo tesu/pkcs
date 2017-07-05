@@ -100,7 +100,7 @@ Template.game_page.events({
 
         Meteor.call('game.delete', FlowRouter.getParam('_id'));
     },
-    'click .action'(event) {
+    'click .action button'(event) {
         event.preventDefault();
         const game = Games.findOne({_id: FlowRouter.getParam('_id')});
         const action = event.target.value;
