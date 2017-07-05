@@ -47,10 +47,13 @@ if (Meteor.isServer) {
     }
 
     Meteor.publish('pokemon', function pokePub() {
-        return Pokedex._collections['pokemon'].find({id: {$lt: 10000}});
+        // gen 3 only for now
+        return Pokedex._collections['pokemon'].find({id: {$lt: 387}});
+        //return Pokedex._collections['pokemon'].find({id: {$lt: 10000}});
     });
     Meteor.publish('moves', function movePub() {
-        return Pokedex._collections['moves'].find();
+        // gen 3 only for now
+        return Pokedex._collections['moves'].find({generation_id: {$lt: 4}});
     });
 }
 
