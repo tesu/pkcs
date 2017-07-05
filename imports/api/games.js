@@ -66,10 +66,14 @@ Meteor.methods({
             message += order[i] + ' received ' + scoreToHearts(game.rank, scores[order[i]]) + ' hearts and is #' + (i+1) + '.\n'
         }
 
-
+        const s = {
+            order: order,
+            score: scores,
+        }
         Games.update(id, {
             $set: {state: 1, turn: 0},
-            $push: { messages: message },
+            $push: {messages: message},
+            $push: {states: s}
         });
     },
     'game.delete'(id) {

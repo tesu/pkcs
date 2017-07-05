@@ -102,10 +102,8 @@ Template.game_page.events({
     },
     'click .action button'(event) {
         event.preventDefault();
-        const game = Games.findOne({_id: FlowRouter.getParam('_id')});
         const action = event.target.value;
-
-        Meteor.call('actions.insert', game, action);
+        Meteor.call('actions.insert', FlowRouter.getParam('_id'), action);
     },
 });
 
