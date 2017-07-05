@@ -89,6 +89,7 @@ Pokedex.moveData = function(move) {
         category: idToCategory(m.contest_type_id),
         appeal: ce.appeal,
         jam: ce.jam,
+        effect_id: m.contest_effect_id,
         effect: cep.effect, 
         flavor: cep.flavor_text,
     }
