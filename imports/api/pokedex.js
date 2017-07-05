@@ -82,12 +82,16 @@ function idToCategory(i) {
 Pokedex.moveData = function(move) {
     const m = Pokedex._collections.moves.findOne({identifier: move});
     if (!m) return null;
-    let x = m.identifier + ' is a ' + idToCategory(m.contest_type_id) + ' move';
     const ce = Pokedex._collections.contest_effects.findOne({id: m.contest_effect_id});
     const cep = Pokedex._collections.contest_effect_prose.findOne({contest_effect_id: m.contest_effect_id});
-    if (!ce || !cep) return x;
-    return x + ' with ' + ce.appeal + ' appeal and ' + ce.jam + ' jam, with the effect ' + cep.effect;
-    // cep.flavor_text used eventually
+    return {
+        identifier: m.identifier,
+        category: idToCategory(m.contest_type_id),
+        appeal: ce.appeal,
+        jam: ce.jam,
+        effect: cep.effect, 
+        flavor: cep.flavor_text,
+    }
 }
 
 Meteor.methods({

@@ -27,15 +27,18 @@ Meteor.methods({
 
         if (Actions.find({game: game._id, turn: game.turn}).count() >= game.players.length) {
             // process turn
-            o = ''
+            o = 'Turn ' + game.turn + '\n';
             pState = game.states[game.turn];
+            nState = { lastMove: {} };
             for (let i=0; i<pState.order.length; i++) {
-                const action = Actions.findOne({game: game._id, turn: game.turn, user: pState.order[i]});
-                console.log(action)
+                const player = pState.order[i];
+                const action = Actions.findOne({game: game._id, turn: game.turn, user: player});
+                const move = Pokedex.moveData(action.action);
 
-                o += action.user + ' used ' + action.action + '. ';
-                o += Pokedex.moveData(action.action);
+                o += action.user + ' used ' + move.identifier + '. ';
                 o += '\n';
+
+                nState.lastMove[player] = action.action;
             }
 
             Games.update({_id: game._id}, {
