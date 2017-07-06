@@ -59,9 +59,28 @@ Meteor.methods({
             };
             for (let i=0; i<pState.order.length; i++) {
                 const player = pState.order[i];
+                if (!nState.flags[player]) nState.flags[player] = {};
+
+                if (nState.flags[player].stunned) {
+                    nState.flags[player].skipped = true;
+                    nState.flags[player].stunned = false;
+                    nState.hearts[player] = 0;
+                    continue;
+                }
+                if (nState.flags[player].dead) {
+                    nState.flags[player].skipped = true;
+                    nState.hearts[player] = 0;
+                    continue;
+                }
+                if (nState.flags[player].nervous) {
+                    nState.flags[player].skipped = true;
+                    nState.flags[player].nervous = false;
+                    nState.hearts[player] = 0;
+                    continue;
+                }
+
                 const action = Actions.findOne({game: game._id, turn: game.turn, user: player});
                 const move = Pokedex.moveData(action.action);
-                if (!nState.flags[player]) nState.flags[player] = {};
                 nState.hearts[player] = move.appeal;
                 const compatibility = categoryCompatibility(move.category, game.category);
                 // nState.hearts[player] += compatibility;
@@ -115,7 +134,14 @@ Meteor.methods({
                         // Attempts to jam the Pokémon that appealed before the user.
                         // TODO
                         break;
-
+                    case 6:
+                        // Attempts to jam the other Pokémon. The user cannot make an appeal on the next turn, but it cannot be jammed either.
+                        nState.flags[player].stunned = true;
+                        break;
+                    case 7:
+                        // User cannot make any more appeals for the remainder of the contest.
+                        nState.flags[player].dead = true;
+                        break;
                     case 11:
                         // If the Applause meter is empty or at one, earns one point; if two, earns three points; if three, earns four points; if four, earns six points.
                         if (nState.excitement == 2) nState.hearts[player]+=2;
