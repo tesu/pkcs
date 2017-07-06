@@ -12,6 +12,28 @@ if (Meteor.isServer) {
     });
 }
 
+function categoryToId(c) {
+    switch (c) {
+        case 'cool':
+            return 1;
+        case 'beauty':
+            return 2;
+        case 'cute':
+            return 3;
+        case 'smart':
+            return 4;
+        case 'tough':
+            return 5;
+    }
+}
+
+function categoryCompatibility(c1, c2) {
+    if (c1 == c2) return 1;
+    const distance = (categoryToId(c1)+5-categoryToId(c2))%5
+    if (distance == 1 || distance == 4) return 0;
+    return -1;
+}
+
 Meteor.methods({
     'actions.insert'(gid, action) {
         if (!Meteor.userId()) throw new Meteor.Error('not-authorized');
