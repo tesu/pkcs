@@ -29,15 +29,28 @@ Meteor.methods({
             // process turn
             o = 'Turn ' + game.turn + '\n';
             pState = game.states[game.turn];
-            nState = { lastMove: {} };
+            nState = { 
+                lastMove: {},
+                hearts: {},
+            };
             for (let i=0; i<pState.order.length; i++) {
                 const player = pState.order[i];
                 const action = Actions.findOne({game: game._id, turn: game.turn, user: player});
                 const move = Pokedex.moveData(action.action);
+                nState.hearts[player] = move.appeal;
 
                 if (pState.lastMove && pState.lastMove[player] == move.identifier) {
-
-                    o += "REPEATED MOVE"
+                    // count how many times repeated
+                    let repeats = 0;
+                    for (let j=game.states.length-1;j>=0;j--) {
+                        if (game.states[j].lastMove && game.states[j].lastMove[player] == move.identifier) {
+                            repeats++;
+                            continue;
+                        }
+                        break;
+                    }
+                    nState.hearts[player] -= 1+repeats;
+                    // o += "REPEATED MOVE PENALTY OF "+(1+repeats);
                 }
                 o += action.user + ' used ' + move.identifier + '. ';
                 o += '\n';
