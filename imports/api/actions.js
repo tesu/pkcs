@@ -99,10 +99,12 @@ Meteor.methods({
                 nState.hearts[player] = move.appeal;
                 const compatibility = categoryCompatibility(move.category, game.category);
                 // nState.hearts[player] += compatibility;
-                if (move.effect_id == 13) {
-                    nState.excitement++;
-                } else {
-                    nState.excitement += compatibility;
+                if (!nState.noApplause) {
+                    if (move.effect_id == 13) {
+                        nState.excitement++;
+                    } else {
+                        nState.excitement += compatibility;
+                    }
                 }
 
                 if (nState.flags[player].stars) {
@@ -121,7 +123,7 @@ Meteor.methods({
                     }
                     nState.hearts[player] -= 1+repeats;
                     // o += "REPEATED MOVE PENALTY OF "+(1+repeats);
-                    if (compatibility == 1 || move.effect_id == 13) nState.excitement -= 1; // disappointed judge
+                    if (!nState.noApplause && (compatibility == 1 || move.effect_id == 13)) nState.excitement -= 1; // disappointed judge
                 }
                 if (nState.excitement < 0) nState.excitement = 0;
                 if (nState.excitement >= 5) {
@@ -253,6 +255,10 @@ Meteor.methods({
                                 jam(nState, pState.order[j], move.jam);
                             }
                         }
+                        break;
+                    case 24:
+                        // Prevents the Applause Meter from rising for the rest of the turn.
+                        nState.noApplause = true;
                         break;
                     case 25:
                         // Randomly earns one, two, four, or eight points.
