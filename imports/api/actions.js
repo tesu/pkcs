@@ -82,6 +82,7 @@ Meteor.methods({
                     // o += "REPEATED MOVE PENALTY OF "+(1+repeats);
                     if (compatibility == 1 || move.effect_id == 13) nState.excitement -= 1; // disappointed judge
                 }
+                if (nState.excitement < 0) nState.excitement = 0;
                 if (nState.excitement >= 5) {
                     // full excitement meter
                     nState.hearts[player] += 6;
