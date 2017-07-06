@@ -73,6 +73,19 @@ Meteor.methods({
                         // TODO
                         break;
 
+                    case 19:
+                        // User earns appeal points equal to the points the previous Pokémon earned plus one.
+                        if (i==0) break;
+                        nState.hearts[player]+=nState.hearts[pState.order[i-1]];
+                        break;
+                    case 20:
+                        // User earns appeal points equal to half the points ALL the previous Pokémon earned plus one.
+                        for (let j=0;j<i;j++) {
+                            // going to assume we don't accumulate negative points
+                            if (nState.hearts[pState.order[j]] > 0) {
+                                nState.hearts[player]+=nState.hearts[pState.order[j]]; 
+                            }
+                        }
                     case 25:
                         // Randomly earns one, two, four, or eight points.
                         const choices = [0,1,3,7];
