@@ -88,28 +88,26 @@ Meteor.methods({
             for (let i=0; i<pState.order.length; i++) {
                 const player = pState.order[i];
                 if (!nState.flags[player]) nState.flags[player] = {};
+                nState.hearts[player] = 0;
 
                 if (nState.flags[player].stunned) {
                     nState.flags[player].skipped = true;
                     nState.flags[player].stunned = false;
-                    nState.hearts[player] = 0;
                     continue;
                 }
                 if (nState.flags[player].dead) {
                     nState.flags[player].skipped = true;
-                    nState.hearts[player] = 0;
                     continue;
                 }
                 if (nState.flags[player].nervous) {
                     nState.flags[player].skipped = true;
                     nState.flags[player].nervous = false;
-                    nState.hearts[player] = 0;
                     continue;
                 }
 
                 const action = Actions.findOne({game: game._id, turn: game.turn, user: player});
                 const move = Pokedex.moveData(action.action);
-                nState.hearts[player] = move.appeal;
+                nState.hearts[player] += move.appeal;
                 const compatibility = categoryCompatibility(move.category, game.category);
                 // nState.hearts[player] += compatibility;
                 if (!nState.noApplause) {
