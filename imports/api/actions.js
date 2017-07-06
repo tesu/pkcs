@@ -52,6 +52,28 @@ Meteor.methods({
                     nState.hearts[player] -= 1+repeats;
                     // o += "REPEATED MOVE PENALTY OF "+(1+repeats);
                 }
+
+                switch (move.effect_id) {
+                    case 1:
+                        // Gives a high number of appeal points with no other effects.
+                        break;
+                    case 2:
+                        // If the Pokémon that appealed before the user earned less than three appeal points, user earns six; if three, user earns three; if more than three, user earns none.
+                        if (i == 0) break;
+                        const prev = nState.hearts[pState.order[i-1]];
+                        if (prev < 3) nState.hearts[player] += 3;
+                        if (prev > 3) nState.hearts[player] -= 3;
+                        break;
+                    case 3:
+                        // If the user is jammed this turn after using this move, it will receive twice as many jam points.
+                        // TODO
+                        break;
+                    case 4:
+                        // Attempts to jam the Pokémon that appealed before the user.
+                        // TODO
+                        break;
+                    
+                }
                 o += action.user + ' used ' + move.identifier + '. ';
                 o += '\n';
 
