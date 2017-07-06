@@ -52,6 +52,7 @@ Meteor.methods({
             o = 'Turn ' + game.turn + '\n';
             pState = game.states[game.turn];
             nState = { 
+                excitement: pState.excitement || 0,
                 lastMove: {},
                 hearts: {},
             };
@@ -60,7 +61,9 @@ Meteor.methods({
                 const action = Actions.findOne({game: game._id, turn: game.turn, user: player});
                 const move = Pokedex.moveData(action.action);
                 nState.hearts[player] = move.appeal;
-
+                const compatibility = categoryCompatibility(move.category, game.category);
+                // nState.hearts[player] += compatibility;
+                nState.excitement += compatibility;
                 if (move.effect_id != 17 && pState.lastMove && pState.lastMove[player] == move.identifier) {
                     // count how many times repeated
                     let repeats = 0;
@@ -73,6 +76,12 @@ Meteor.methods({
                     }
                     nState.hearts[player] -= 1+repeats;
                     // o += "REPEATED MOVE PENALTY OF "+(1+repeats);
+                    if (compatibility == 1) nState.excitement -= 1; // disappointed judge
+                }
+                if (nState.excitement >= 5) {
+                    // full excitement meter
+                    nState.hearts[player] += 6;
+                    nState.excitement = 0;
                 }
 
                 switch (move.effect_id) {
