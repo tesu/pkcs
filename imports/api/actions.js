@@ -72,6 +72,27 @@ Meteor.methods({
                         // Attempts to jam the Pokémon that appealed before the user.
                         // TODO
                         break;
+
+                    case 25:
+                        // Randomly earns one, two, four, or eight points.
+                        const choices = [0,1,3,7];
+                        nState.hearts[player] += choices[Math.floor(Math.random() * choices.length)];
+                        break;
+                    case 26:
+                        // If user appeals first this turn, earns one point; if second, two points; if third, four points; if last, six points.
+                        if (i == 1) nState.hearts[player]++; // second
+                        if (i == 2) nState.hearts[player]+=3; // third
+                        if (i == 3) nState.hearts[player]+=5; // fourth
+                        break;
+                    case 27:
+                        // If user appeals first this turn, earns six points instead of two.
+                        if (i == 0) nState.hearts[player]+=4;
+                        break;
+                    case 28:
+                        // If user appeals last this turn, earns six points instead of two.
+                        if (i == 3) nState.hearts[player]+=4;
+                        break;
+                    
                     
                 }
                 o += action.user + ' used ' + move.identifier + '. ';
