@@ -108,6 +108,18 @@ Meteor.methods({
                         // TODO
                         break;
 
+                    case 11:
+                        // If the Applause meter is empty or at one, earns one point; if two, earns three points; if three, earns four points; if four, earns six points.
+                        if (nState.excitement == 2) nState.hearts[player]+=2;
+                        if (nState.excitement == 3) nState.hearts[player]+=3;
+                        if (nState.excitement == 4) nState.hearts[player]+=5;
+                        break;
+                    case 12:
+                        // If the last Pokémon's appeal is the same type as this move, user earns six points instead of two.
+                        if (1==0) break;
+                        if (nState.lastMove[pState.order[i-1]].category == move.category) {
+                            nState.hearts[player]+=4;
+                        }
                     case 19:
                         // User earns appeal points equal to the points the previous Pokémon earned plus one.
                         if (i==0) break;
