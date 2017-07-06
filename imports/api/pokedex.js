@@ -61,6 +61,9 @@ if (Meteor.isServer) {
     Meteor.publish('cep', function() {
         return Pokedex._collections.contest_effect_prose.find();
     });
+    Meteor.publish('cc', function() {
+        return Pokedex._collections.contest_combos.find();
+    });
 }
 
 Pokedex.validMoves = function(pokemon) {
@@ -90,6 +93,7 @@ Pokedex.moveData = function(move) {
     if (!m) return null;
     const ce = Pokedex._collections.contest_effects.findOne({id: m.contest_effect_id});
     const cep = Pokedex._collections.contest_effect_prose.findOne({contest_effect_id: m.contest_effect_id});
+    const cc = Pokedex._collections.contest_combos.find({first_move_id: m.id}).count() > 0;
     return {
         identifier: m.identifier,
         category: idToCategory(m.contest_type_id),
@@ -98,7 +102,13 @@ Pokedex.moveData = function(move) {
         effect_id: m.contest_effect_id,
         effect: cep.effect, 
         flavor: cep.flavor_text,
+        standby: cc,
     }
+}
+Pokedex.isCombo = function(m1, m2) {
+    const a = Pokedex._collections.moves.findOne({identifier: m1});
+    const b = Pokedex._collections.moves.findOne({identifier: m2});
+    return (Pokedex._collections.contest_combos.find({first_move_id: a.id, second_move_id: b.id}).count() > 0);
 }
 
 Meteor.methods({
