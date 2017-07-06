@@ -324,7 +324,8 @@ Meteor.methods({
                         }
                         break;
                 }
-                o += action.user + ' used ' + move.identifier + '. ';
+                o += player + ' used ' + move.identifier + '. ';
+                o += player + ' got ' + nState.hearts[player] + ' hearts.';
                 o += '\n';
 
                 nState.lastMove[player] = action.action;
@@ -351,6 +352,14 @@ Meteor.methods({
                 if (nState.flags[player].goLast) nState.hearts[player]+=99;
                 
                 nState.score[player] = pState.score[player] + nState.hearts[player]
+
+                const f = nState.flags[player];
+                if (f.doublejam) f.doublejam = false;
+                if (f.superblock) f.superblock = false;
+                if (f.block) f.block = false;
+                if (f.goFirst) f.goFirst = false;
+                if (f.goLast) f.goLast = false;
+                if (f.skipped) f.skipped = false;
             }
 
             Games.update({_id: game._id}, {
