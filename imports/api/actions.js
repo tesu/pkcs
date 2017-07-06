@@ -34,6 +34,18 @@ function categoryCompatibility(c1, c2) {
     return -1;
 }
 
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
+
 function jam(state, player, amount) {
     if (state.flags[player].block) {
         state.flags[player].block = false;
@@ -69,6 +81,7 @@ Meteor.methods({
             nState = { 
                 excitement: pState.excitement || 0,
                 flags: pState.flags || {},
+                score: {},
                 lastMove: {},
                 hearts: {},
             };
@@ -316,8 +329,29 @@ Meteor.methods({
 
                 nState.lastMove[player] = action.action;
             }
-            nState.order = pState.order;
-            nState.score = pState.score;
+
+            for (let i=0; i<pState.order.length; i++) {
+                const player = pState.order[i];
+                if (nState.flags[player].goFirst) nState.hearts[player]+=99;
+                if (nState.flags[player].goLast) nState.hearts[player]-=99;
+            }
+
+            let order;
+            if (nState.shuffle) {
+                order = shuffle(pState.order); 
+            } else {
+                order = pState.order.sort(function(a,b){return nState.hearts[a]-nState.hearts[b];});
+            }
+
+            nState.order = order;
+
+            for (let i=0; i<pState.order.length; i++) {
+                const player = pState.order[i];
+                if (nState.flags[player].goFirst) nState.hearts[player]-=99;
+                if (nState.flags[player].goLast) nState.hearts[player]+=99;
+                
+                nState.score[player] = pState.score[player] + nState.hearts[player]
+            }
 
             Games.update({_id: game._id}, {
                 $inc: {turn: 1},
