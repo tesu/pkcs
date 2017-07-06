@@ -44,12 +44,14 @@ Meteor.methods({
 
                 nState.lastMove[player] = action.action;
             }
+            nState.order = pState.order;
+            nState.score = pState.score;
 
             Games.update({_id: game._id}, {
                 $inc: {turn: 1},
                 $push: {
                     messages: o,
-                    states: pState,
+                    states: nState,
                 },
             });
         }
