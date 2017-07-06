@@ -198,6 +198,13 @@ Meteor.methods({
                         if (!nState.flags[player].stars) nState.flags[player].stars = 0;
                         if (nState.flags[player].stars < 3) nState.flags[player].stars++;
                         break;
+                    case 33:
+                        // Removes all stars from all Pokémon that have appealed this turn.
+                        for (let j=0;j<i;j++) {
+                            if (!nState.flags[pState.order[j]].skipped)
+                                nState.flags[pState.order[j]].stars = 0;
+                        }
+                        break;
                 }
                 o += action.user + ' used ' + move.identifier + '. ';
                 o += '\n';
