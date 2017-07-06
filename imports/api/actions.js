@@ -128,7 +128,7 @@ Meteor.methods({
                         break;
                     case 3:
                         // If the user is jammed this turn after using this move, it will receive twice as many jam points.
-                        // TODO
+                        nState.flags[player].doublejam = true;
                         break;
                     case 4:
                         // Attempts to jam the Pokémon that appealed before the user.
