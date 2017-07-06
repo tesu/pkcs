@@ -61,6 +61,7 @@ Meteor.methods({
                 const player = pState.order[i];
                 const action = Actions.findOne({game: game._id, turn: game.turn, user: player});
                 const move = Pokedex.moveData(action.action);
+                if (!nState.flags[player]) nState.flags[player] = {};
                 nState.hearts[player] = move.appeal;
                 const compatibility = categoryCompatibility(move.category, game.category);
                 // nState.hearts[player] += compatibility;
@@ -70,8 +71,8 @@ Meteor.methods({
                     nState.excitement += compatibility;
                 }
 
-                if (nState.flags[player] && nState.flags[player].stars) {
-                    nState.hearts[player]++;
+                if (nState.flags[player].stars) {
+                    nState.hearts[player]+=nState.flags[player].stars;
                 }
 
                 if (move.effect_id != 17 && pState.lastMove && pState.lastMove[player] == move.identifier) {
@@ -159,7 +160,12 @@ Meteor.methods({
                         // If user appeals last this turn, earns six points instead of two.
                         if (i == 3) nState.hearts[player]+=4;
                         break;
-                    
+
+                    case 32:
+                        // User gains one star.
+                        if (!nState.flags[player].stars) nState.flags[player].stars = 0;
+                        if (nState.flags[player].stars < 3) nState.flags[player].stars++;
+                        break;
                     
                 }
                 o += action.user + ' used ' + move.identifier + '. ';
