@@ -206,7 +206,7 @@ Meteor.methods({
                         break;
                     case 12:
                         // If the last Pokémon's appeal is the same type as this move, user earns six points instead of two.
-                        if (1==0) break;
+                        if (i==0) break;
                         if (nState.lastMove[pState.order[i-1]].category == move.category) {
                             nState.hearts[player]+=4;
                         }
