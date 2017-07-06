@@ -39,7 +39,7 @@ Meteor.methods({
                 const move = Pokedex.moveData(action.action);
                 nState.hearts[player] = move.appeal;
 
-                if (pState.lastMove && pState.lastMove[player] == move.identifier) {
+                if (move.effect_id != 17 && pState.lastMove && pState.lastMove[player] == move.identifier) {
                     // count how many times repeated
                     let repeats = 0;
                     for (let j=game.states.length-1;j>=0;j--) {
