@@ -239,6 +239,10 @@ Meteor.methods({
                             }
                         }
                         break;
+                    case 21:
+                        // Shuffles the next turn's turn order.
+                        nState.shuffle = true;
+                        break;
                     case 22:
                         // Cancels combo standby status for all Pokémon that have appealed this turn.
                         for (let j=0;j<i;j++) {
@@ -278,6 +282,21 @@ Meteor.methods({
                     case 28:
                         // If user appeals last this turn, earns six points instead of two.
                         if (i == 3) nState.hearts[player]+=4;
+                        break;
+                    case 29:
+                        // If user has no stars, earns one point; if one, three points; if two, five points; if three, seven points. This does not include the appeal point bonus the stars give.
+                        if (!nState.flags[player].stars || nState.flags[player].stars == 0) break;
+                        if (nState.flags[player].stars == 1) nState.hearts[player]+=2;
+                        if (nState.flags[player].stars == 2) nState.hearts[player]+=4;
+                        if (nState.flags[player].stars == 3) nState.hearts[player]+=6;
+                        break;
+                    case 30:
+                        // User will go first next turn.
+                        nState.flags[player].goFirst = true;
+                        break;
+                    case 31:
+                        // User will go last next turn.
+                        nState.flags[player].goLast = true;
                         break;
                     case 32:
                         // User gains one star.
