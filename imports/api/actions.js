@@ -34,6 +34,18 @@ function categoryCompatibility(c1, c2) {
     return -1;
 }
 
+function jam(state, player, amount) {
+    if (state.flags[player].block) {
+        state.flags[player].block = false;
+        return;
+    }
+    if (state.flags[player].superblock) {
+        return;
+    }
+    state.hearts[player] -= amount;
+    if (state.flags[player].doublejam) state.hearts[player] -= amount;
+}
+
 Meteor.methods({
     'actions.insert'(gid, action) {
         if (!Meteor.userId()) throw new Meteor.Error('not-authorized');
