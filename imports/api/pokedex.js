@@ -46,14 +46,20 @@ if (Meteor.isServer) {
         }
     }
 
-    Meteor.publish('pokemon', function pokePub() {
+    Meteor.publish('pokemon', function() {
         // gen 3 only for now
         return Pokedex._collections['pokemon'].find({id: {$lt: 387}});
         //return Pokedex._collections['pokemon'].find({id: {$lt: 10000}});
     });
-    Meteor.publish('moves', function movePub() {
+    Meteor.publish('moves', function() {
         // gen 3 only for now
         return Pokedex._collections['moves'].find({generation_id: {$lt: 4}});
+    });
+    Meteor.publish('ce', function() {
+        return Pokedex._collections.contest_effects.find();
+    });
+    Meteor.publish('cep', function() {
+        return Pokedex._collections.contest_effect_prose.find();
     });
 }
 

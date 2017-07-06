@@ -17,6 +17,8 @@ Template.game_page.onCreated(function bodyOnCreated() {
     sub.push(Meteor.subscribe('results', FlowRouter.getParam('_id')));
     sub.push(Meteor.subscribe('pokemon_instances'));
     sub.push(Meteor.subscribe('moves'));
+    sub.push(Meteor.subscribe('ce'));
+    sub.push(Meteor.subscribe('cep'));
 });
 
 Template.game_page.onDestroyed(function bodyOnDestroyed() {

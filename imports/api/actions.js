@@ -35,6 +35,10 @@ Meteor.methods({
                 const action = Actions.findOne({game: game._id, turn: game.turn, user: player});
                 const move = Pokedex.moveData(action.action);
 
+                if (pState.lastMove && pState.lastMove[player] == move.identifier) {
+
+                    o += "REPEATED MOVE"
+                }
                 o += action.user + ' used ' + move.identifier + '. ';
                 o += '\n';
 
