@@ -53,6 +53,7 @@ Meteor.methods({
             pState = game.states[game.turn];
             nState = { 
                 excitement: pState.excitement || 0,
+                flags: pState.flags || {},
                 lastMove: {},
                 hearts: {},
             };
@@ -68,6 +69,11 @@ Meteor.methods({
                 } else {
                     nState.excitement += compatibility;
                 }
+
+                if (nState.flags[player] && nState.flags[player].stars) {
+                    nState.hearts[player]++;
+                }
+
                 if (move.effect_id != 17 && pState.lastMove && pState.lastMove[player] == move.identifier) {
                     // count how many times repeated
                     let repeats = 0;
