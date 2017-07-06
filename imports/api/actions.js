@@ -154,6 +154,13 @@ Meteor.methods({
                         if (nState.lastMove[pState.order[i-1]].category == move.category) {
                             nState.hearts[player]+=4;
                         }
+                    case 18:
+                        // Attempts to make all following Pokémon nervous (and thus unable to appeal).
+                        for (let j=i+1;j<pState.order.length;j++) {
+                            const stars = nState.flags[pState.order[j]].stars;
+                            if (!stars || stars == 0) nState.flags[pState.order[j]].nervous = true;
+                        }
+                        break;
                     case 19:
                         // User earns appeal points equal to the points the previous Pokémon earned plus one.
                         if (i==0) break;
@@ -186,13 +193,11 @@ Meteor.methods({
                         // If user appeals last this turn, earns six points instead of two.
                         if (i == 3) nState.hearts[player]+=4;
                         break;
-
                     case 32:
                         // User gains one star.
                         if (!nState.flags[player].stars) nState.flags[player].stars = 0;
                         if (nState.flags[player].stars < 3) nState.flags[player].stars++;
                         break;
-                    
                 }
                 o += action.user + ' used ' + move.identifier + '. ';
                 o += '\n';
