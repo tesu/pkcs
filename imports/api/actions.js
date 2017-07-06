@@ -42,6 +42,9 @@ function jam(state, player, amount) {
     if (state.flags[player].superblock) {
         return;
     }
+    if (state.flags[player].skipped) {
+        return;
+    }
     state.hearts[player] -= amount;
     if (state.flags[player].doublejam) state.hearts[player] -= amount;
 }
@@ -144,15 +147,41 @@ Meteor.methods({
                         break;
                     case 4:
                         // Attempts to jam the Pokémon that appealed before the user.
-                        // TODO
+                        if (i != 0) jam(nState, pState.order[i-1], move.jam);
+                        break;
+                    case 5:
+                        // Attempts to jam all Pokémon that have appealed this turn.
+                        for (let j=0;j<i;j++)
+                            jam(nState, pState.order[i-1], move.jam);
                         break;
                     case 6:
                         // Attempts to jam the other Pokémon. The user cannot make an appeal on the next turn, but it cannot be jammed either.
+                        for (let j=0;j<i;j++)
+                            jam(nState, pState.order[j], move.jam);
                         nState.flags[player].stunned = true;
                         break;
                     case 7:
                         // User cannot make any more appeals for the remainder of the contest.
                         nState.flags[player].dead = true;
+                        break;
+                    case 8:
+                        // Attempts to jam all Pokémon that have appealed this turn.
+                        for (let j=0;j<i;j++)
+                            jam(nState, pState.order[j], move.jam);
+                        break;
+                    case 9:
+                        // Attempts to jam the Pokémon that appealed before the user.
+                        if (i != 0) jam(nState, pState.order[i-1], move.jam);
+                        break;
+                    case 10:
+                        // Attempts to jam all Pokémon that have appealed this turn. If a Pokémon is in combo standby status, it is jammed 5 points instead of 1.
+                        for (let j=0;j<i;j++) {
+                            if (nState.flags[pState.order[j]].standby) {
+                                jam(nState, pState.order[j], 5);
+                            } else {
+                                jam(nState, pState.order[j], move.jam);
+                            }
+                        }
                         break;
                     case 11:
                         // If the Applause meter is empty or at one, earns one point; if two, earns three points; if three, earns four points; if four, earns six points.
@@ -166,6 +195,27 @@ Meteor.methods({
                         if (nState.lastMove[pState.order[i-1]].category == move.category) {
                             nState.hearts[player]+=4;
                         }
+                        break;
+                    case 13:
+                        // Always adds a point to the applause meter, regardless of whether the move matches the contest, and can likewise gain the applause bonus.
+                        break;
+                    case 14:
+                        // Attempts to jam all Pokémon that have appealed this turn for half their appeal points (minimum 1).
+                        for (let j=0;j<i;j++) {
+                            jam(nState, pState.order[j], Math.max(1, nState.hearts[pState.order[j]]/2));
+                        }
+                        break;
+                    case 15:
+                        // Prevents jamming for the rest of this turn.
+                        nState.flags[player].superblock = true;
+                        break;
+                    case 16:
+                        // Prevents the next jam on this turn.
+                        nState.flags[player].block = true;
+                        break;
+                    case 17:
+                        // Repeated use does not incur a penalty.
+                        break;
                     case 18:
                         // Attempts to make all following Pokémon nervous (and thus unable to appeal).
                         for (let j=i+1;j<pState.order.length;j++) {
@@ -186,6 +236,24 @@ Meteor.methods({
                                 nState.hearts[player]+=nState.hearts[pState.order[j]]; 
                             }
                         }
+                        break;
+                    case 22:
+                        // Cancels combo standby status for all Pokémon that have appealed this turn.
+                        for (let j=0;j<i;j++) {
+                            nState.flags[pState.order[j]].standby = false;
+                        }
+                        break;
+                    case 23:
+                        // Attempts to jam all Pokémon that have appealed this turn. If a Pokémon used the same type move as this one, it is jammed for 4 points instead of 1.
+                        for (let j=0;j<i;j++) {
+                            if (!nState.flags[pState.order[j]].skipped && 
+                                nState.lastMove[pState.order[j]].category == move.category) {
+                                jam(nState, pState.order[j], 4);
+                            } else {
+                                jam(nState, pState.order[j], move.jam);
+                            }
+                        }
+                        break;
                     case 25:
                         // Randomly earns one, two, four, or eight points.
                         const choices = [0,1,3,7];
