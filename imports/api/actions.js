@@ -63,7 +63,11 @@ Meteor.methods({
                 nState.hearts[player] = move.appeal;
                 const compatibility = categoryCompatibility(move.category, game.category);
                 // nState.hearts[player] += compatibility;
-                nState.excitement += compatibility;
+                if (move.effect_id == 13) {
+                    nState.excitement++;
+                } else {
+                    nState.excitement += compatibility;
+                }
                 if (move.effect_id != 17 && pState.lastMove && pState.lastMove[player] == move.identifier) {
                     // count how many times repeated
                     let repeats = 0;
@@ -76,7 +80,7 @@ Meteor.methods({
                     }
                     nState.hearts[player] -= 1+repeats;
                     // o += "REPEATED MOVE PENALTY OF "+(1+repeats);
-                    if (compatibility == 1) nState.excitement -= 1; // disappointed judge
+                    if (compatibility == 1 || move.effect_id == 13) nState.excitement -= 1; // disappointed judge
                 }
                 if (nState.excitement >= 5) {
                     // full excitement meter
