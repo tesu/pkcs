@@ -122,17 +122,6 @@ Meteor.methods({
                     nState.hearts[player]+=nState.flags[player].stars;
                 }
 
-
-                if (nState.flags[player].standby) {
-                    // combo check
-                    if (Pokedex.isCombo(pState.lastMove, move.identifier)) {
-                        nState.hearts[player] += move.appeal;
-                    }
-                    nState.flags[player].standby = false;
-                } else {
-                    if (move.cc) nState.flags[player].standby = true;
-                }
-
                 if (move.effect_id != 17 && pState.lastMove && pState.lastMove[player] == move.identifier) {
                     // count how many times repeated
                     let repeats = 0;
@@ -333,6 +322,17 @@ Meteor.methods({
                         }
                         break;
                 }
+
+                if (nState.flags[player].standby) {
+                    // combo check
+                    if (Pokedex.isCombo(pState.lastMove, move.identifier)) {
+                        nState.hearts[player] *= 2;
+                    }
+                    nState.flags[player].standby = false;
+                } else {
+                    if (move.standby) nState.flags[player].standby = true;
+                }
+
                 o += player + ' used ' + move.identifier + '. ';
                 o += player + ' got ' + nState.hearts[player] + ' hearts.';
                 o += '\n';
