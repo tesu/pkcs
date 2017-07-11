@@ -1,3 +1,4 @@
+import {Pokemon} from './pokemon.js';
 import {Pokedex} from './pokedex.js';
 import {Actions} from './actions.js';
 
@@ -39,15 +40,15 @@ function categoryCompatibility(c1, c2) {
 }
 
 function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-  while (0 !== currentIndex) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-  return array;
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array;
 }
 
 export const Game = {
@@ -66,6 +67,7 @@ export const Game = {
         };
         for (let i=0; i<pState.order.length; i++) {
             const player = pState.order[i];
+            const pokemon = Pokemon.findOne(game.pokemon[player]);
             if (!nState.flags[player]) nState.flags[player] = {};
             nState.hearts[player] = 0;
 
@@ -312,8 +314,8 @@ export const Game = {
                 if (move.standby) nState.flags[player].standby = true;
             }
 
-            nState.messages.push(player + ' appealed with ' + move.identifier + '. ');
-            nState.messages.push(player + ' got ' + nState.hearts[player] + ' hearts.');
+            nState.messages.push(pokemon.nickname + ' appealed with ' + move.identifier + '. ');
+            nState.messages.push(pokemon.nickname + ' got ' + nState.hearts[player] + ' hearts.');
 
             nState.lastMove[player] = action.action;
         }
