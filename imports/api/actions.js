@@ -354,6 +354,7 @@ Meteor.methods({
             }
 
             nState.order = order;
+            o += 'The new order is now ' + order.join(', ').slice(0,-2) + '.\n'
 
             for (let i=0; i<pState.order.length; i++) {
                 const player = pState.order[i];
