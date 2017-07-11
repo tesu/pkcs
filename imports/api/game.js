@@ -90,12 +90,21 @@ export const Game = {
             const move = Pokedex.moveData(action.action);
             nState.hearts[player] += move.appeal;
             const compatibility = categoryCompatibility(move.category, game.category);
-            // nState.hearts[player] += compatibility;
+
+            nState.messages.push(pokemon.nickname + ' appealed with ' + move.identifier + '!');
+            
             if (!nState.noApplause) {
                 if (move.effect_id == 13) {
                     nState.excitement++;
                 } else {
                     nState.excitement += compatibility;
+                    if (compatibility == -1) {
+                        nState.messages.push(pokemon.nickname + '\'s ' + move.category + ' didn\'t go over well here...');
+                    }
+                    if (compatibility == 1) {
+                        nState.hearts[player]++;
+                        nState.messages.push(pokemon.nickname + '\'s ' + move.category + ' went over great.');
+                    }
                 }
             }
 
@@ -114,7 +123,7 @@ export const Game = {
                     break;
                 }
                 nState.hearts[player] -= 1+repeats;
-                // o += "REPEATED MOVE PENALTY OF "+(1+repeats);
+                nState.messages.push(pokemon.nickname + ' disappointed by repeating an appeal.');
                 if (!nState.noApplause && (compatibility == 1 || move.effect_id == 13)) nState.excitement -= 1; // disappointed judge
             }
             if (nState.excitement < 0) nState.excitement = 0;
@@ -308,13 +317,16 @@ export const Game = {
                 // combo check
                 if (Pokedex.isCombo(pState.lastMove[player], move.identifier)) {
                     nState.hearts[player] *= 2;
+                    nState.messages.push('The appeal combo went over well.');
                 }
                 nState.flags[player].standby = false;
             } else {
-                if (move.standby) nState.flags[player].standby = true;
+                if (move.standby) {
+                    nState.flags[player].standby = true;
+                    nState.messages.push('The judge looked at ' + pokemon.nickname + ' expectantly.');
+                }
             }
 
-            nState.messages.push(pokemon.nickname + ' appealed with ' + move.identifier + '. ');
             nState.messages.push(pokemon.nickname + ' got ' + nState.hearts[player] + ' hearts.');
 
             nState.lastMove[player] = action.action;
