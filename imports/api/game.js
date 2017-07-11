@@ -55,14 +55,14 @@ export const Game = {
 
     },
     'process'(game) {
-        o = 'Turn ' + game.turn + '\n';
-        pState = game.states[game.turn];
-        nState = { 
+        const pState = game.states[game.turn];
+        const nState = { 
             excitement: pState.excitement || 0,
             flags: pState.flags || {},
             score: {},
             lastMove: {},
             hearts: {},
+            messages: [],
         };
         for (let i=0; i<pState.order.length; i++) {
             const player = pState.order[i];
@@ -304,7 +304,7 @@ export const Game = {
 
             if (nState.flags[player].standby) {
                 // combo check
-                if (Pokedex.isCombo(pState.lastMove, move.identifier)) {
+                if (Pokedex.isCombo(pState.lastMove[player], move.identifier)) {
                     nState.hearts[player] *= 2;
                 }
                 nState.flags[player].standby = false;
@@ -312,9 +312,8 @@ export const Game = {
                 if (move.standby) nState.flags[player].standby = true;
             }
 
-            o += player + ' used ' + move.identifier + '. ';
-            o += player + ' got ' + nState.hearts[player] + ' hearts.';
-            o += '\n';
+            nState.messages.push(player + ' appealed with ' + move.identifier + '. ');
+            nState.messages.push(player + ' got ' + nState.hearts[player] + ' hearts.');
 
             nState.lastMove[player] = action.action;
         }
@@ -333,7 +332,6 @@ export const Game = {
         }
 
         nState.order = order;
-        o += 'The new order is now ' + order.join(', ').slice(0,-2) + '.\n'
 
         for (let i=0; i<pState.order.length; i++) {
             const player = pState.order[i];
@@ -350,6 +348,8 @@ export const Game = {
             if (f.goLast) f.goLast = false;
             if (f.skipped) f.skipped = false;
         }
+
+        return nState;
 
     },
 }

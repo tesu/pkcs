@@ -2,7 +2,6 @@ import {Mongo} from 'meteor/mongo';
 import {check} from 'meteor/check';
 
 import {Games} from './games.js';
-import {Pokedex} from './pokedex.js';
 import {Game} from './game.js';
 
 export const Actions = new Mongo.Collection('actions');
@@ -28,12 +27,12 @@ Meteor.methods({
 
         if (Actions.find({game: game._id, turn: game.turn}).count() >= game.players.length) {
             // process turn
-            Game.process(game);
+            let nState = Game.process(game);
 
             Games.update({_id: game._id}, {
                 $inc: {turn: 1},
                 $push: {
-                    messages: o,
+                    //messages: o,
                     states: nState,
                 },
             });

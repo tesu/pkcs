@@ -56,7 +56,7 @@ Template.game_page.helpers({
     },
     messages() {
         const game = Games.findOne(FlowRouter.getParam('_id'));
-        return game && game.messages;
+        return game && game.states[game.states.length-1].messages;
     },
     canMove() {
         const game = Games.findOne({_id: FlowRouter.getParam('_id'), players: Meteor.userId()});
