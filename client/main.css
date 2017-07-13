@@ -1,1 +1,18 @@
 /* CSS declarations go here */
+body {
+    margin: 20px auto;
+    max-width: 650px;
+    line-height: 1.4;
+}
+#header {
+    background-color: #bcffc7;
+    padding: .5em;
+}
+#header ul {
+    list-style: none;
+    padding: initial;
+    margin: 0;
+}
+#header li {
+    display: inline;
+}

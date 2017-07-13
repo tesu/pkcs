@@ -1,7 +1,15 @@
 <template name="base">
-    {{> loginButtons}}
+    <div id="header">
+        <ul>
+            <li>Home</li>
+            <li>Pokemon</li>
+            <li>{{> loginButtons}}</li>
+        </ul>
+    </div>
 
+    <div id="content">
     {{> Template.dynamic template=main}}
+    </div>
 </template>
 
 <template name="index">
