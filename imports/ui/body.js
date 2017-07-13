@@ -29,7 +29,7 @@ Template.base.events({
         
         const f = event.target;
 
-        Meteor.call('games.insert', f.rank.value, f.category.value, f.pokemon.value);
+        Meteor.call('games.insert', f.name.value, f.rank.value, f.category.value, f.pokemon.value);
     },
 });
 

@@ -15,12 +15,13 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-    'games.insert'(r, c, pid) {
+    'games.insert'(n, r, c, pid) {
         if (!Meteor.userId()) throw new Meteor.Error('not-authorized');
 
         p = {};
         p[Meteor.userId()] = pid;
         Games.insert({
+            name: n,
             createdAt: new Date(),
             host: Meteor.userId(),
             players: [Meteor.userId()],

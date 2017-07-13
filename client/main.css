@@ -22,3 +22,16 @@ body {
 .new-game select {
     width: 100%;
 }
+.lobby-list {
+    list-style: none;
+    padding: initial;
+    margin: 0;
+}
+.lobby {
+    display: inline-block;
+    margin: .25em;
+    padding: .5em;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
