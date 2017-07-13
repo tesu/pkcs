@@ -16,3 +16,9 @@ body {
 #header li {
     display: inline;
 }
+.new-game table {
+    border-spacing: 0;
+}
+.new-game select {
+    width: 100%;
+}

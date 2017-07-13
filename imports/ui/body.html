@@ -17,40 +17,40 @@
 <template name="index">
     {{#if currentUser}}
         <form class="new-game">
-            <div>
-                <label for="name">Lobby Name:</label>
-                <input name="name" value="{{currentUser.username}}'s Lobby">
-            </div>
-            <div>
-                <label for="pokemon">Your Pokemon:</label>
-                <select name="pokemon">
-                    {{#each p in pokemon}}
-                    <option value="{{p._id}}">{{p.nickname}}</option>
-                    {{/each}}
-                </select>
-            </div>
-            <div>
-                <label for="rank">Contest Rank:</label>
-                <select name="rank">
-                    <option value="normal">Normal</option>
-                    <option value="super">Super</option>
-                    <option value="hyper">Hyper</option>
-                    <option value="master">Master</option>
-                </select>
-            </div>
-            <div>
-                <label for="category">Contest Category:</label>
-                <select name="category">
-                    <option value="cool">Cool</option>
-                    <option value="beauty">Beauty</option>
-                    <option value="cute">Cute</option>
-                    <option value="smart">Smart</option>
-                    <option value="tough">Tough</option>
-                </select>
-            </div>
-            <div>
-                <input type="submit" value="Create Game">
-            </div>
+            <table>
+                <tr>
+                    <td><label for="name">Lobby Name:</label></td>
+                    <td><input name="name" value="{{currentUser.username}}'s Lobby"></td>
+                </tr>
+                <tr>
+                    <td><label for="pokemon">Your Pokemon:</label></td>
+                    <td><select name="pokemon">
+                        {{#each p in pokemon}}
+                        <option value="{{p._id}}">{{p.nickname}}</option>
+                        {{/each}}
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><label for="rank">Contest Rank:</label></td>
+                    <td><select name="rank">
+                        <option value="normal">Normal</option>
+                        <option value="super">Super</option>
+                        <option value="hyper">Hyper</option>
+                        <option value="master">Master</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><label for="category">Contest Category:</label></td>
+                    <td><select name="category">
+                        <option value="cool">Cool</option>
+                        <option value="beauty">Beauty</option>
+                        <option value="cute">Cute</option>
+                        <option value="smart">Smart</option>
+                        <option value="tough">Tough</option>
+                    </select></td>
+                </tr>
+            </table>
+            <input type="submit" value="Create Game">
         </form>
     {{/if}}
     <ul>
