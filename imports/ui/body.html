@@ -1,8 +1,10 @@
 <template name="base">
     <div id="header">
         <ul>
-            <li>Home</li>
-            <li>Pokemon</li>
+            <li><a href="/">Home</a></li>
+            {{#if currentUser}}
+            <li><a href="/pokemon">My Pokemon</a></li>
+            {{/if}}
             <li>{{> loginButtons}}</li>
         </ul>
     </div>
@@ -14,27 +16,41 @@
 
 <template name="index">
     {{#if currentUser}}
-        <a href="/pokemon">edit pokemon</a>
         <form class="new-game">
-            <select name="pokemon">
-                {{#each p in pokemon}}
-                <option value="{{p._id}}">{{p.nickname}}</option>
-                {{/each}}
-            </select>
-            <select name="rank">
-                <option value="normal">Normal</option>
-                <option value="super">Super</option>
-                <option value="hyper">Hyper</option>
-                <option value="master">Master</option>
-            </select>
-            <select name="category">
-                <option value="cool">Cool</option>
-                <option value="beauty">Beauty</option>
-                <option value="cute">Cute</option>
-                <option value="smart">Smart</option>
-                <option value="tough">Tough</option>
-            </select>
-            <input type="submit" value="Create Game">
+            <div>
+                <label for="name">Lobby Name:</label>
+                <input name="name" value="{{currentUser.username}}'s Lobby">
+            </div>
+            <div>
+                <label for="pokemon">Your Pokemon:</label>
+                <select name="pokemon">
+                    {{#each p in pokemon}}
+                    <option value="{{p._id}}">{{p.nickname}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div>
+                <label for="rank">Contest Rank:</label>
+                <select name="rank">
+                    <option value="normal">Normal</option>
+                    <option value="super">Super</option>
+                    <option value="hyper">Hyper</option>
+                    <option value="master">Master</option>
+                </select>
+            </div>
+            <div>
+                <label for="category">Contest Category:</label>
+                <select name="category">
+                    <option value="cool">Cool</option>
+                    <option value="beauty">Beauty</option>
+                    <option value="cute">Cute</option>
+                    <option value="smart">Smart</option>
+                    <option value="tough">Tough</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Create Game">
+            </div>
         </form>
     {{/if}}
     <ul>
