@@ -40,4 +40,18 @@ input, select, button {
     border: 1px solid black;
     border-radius: 5px;
 }
-
+.chatbox input {
+    width: 100%
+}
+.chatbox ul {
+    list-style: none;
+    padding: initial;
+    margin: 0
+}
+.chatbox {
+    z-index: -1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 20em;
+}

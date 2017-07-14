@@ -6,7 +6,7 @@ import './chatbox.html';
 
 Template.chatbox.helpers({
     chat() {
-        return Chat.find({game: FlowRouter.getParam('_id')}, {sort: {createdAt: -1}});
+        return Chat.find({game: FlowRouter.getParam('_id')}, {sort: {createdAt: 1}});
     },
     username() {
         const user = Meteor.users.findOne({_id: this.user});

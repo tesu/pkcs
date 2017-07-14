@@ -1,11 +1,13 @@
 <template name="chatbox">
-    <form class="chat-box">
-        <input type="text" name="text" placeholder="chatbox">
-    </form>
-    <ul>
-        {{#each chat}}
-        <li><strong>[{{timestamp}}] {{username}}:</strong> {{this.text}}</li>
-        {{/each}}
-    </ul>
+    <div class="chatbox">
+        <ul>
+            {{#each chat}}
+            <li><strong>[{{timestamp}}] {{username}}:</strong> {{this.text}}</li>
+            {{/each}}
+        </ul>
+        <form class="chat-box">
+            <input type="text" name="text" placeholder="Chat">
+        </form>
+    </div>
 </template>
 
