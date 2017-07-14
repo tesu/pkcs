@@ -22,6 +22,9 @@ input, select, button {
 #header li {
     display: inline;
 }
+#content {
+    position: relative;
+}
 .new-game table {
     border-spacing: 0;
 }
@@ -54,4 +57,12 @@ input, select, button {
     bottom: 0;
     left: 0;
     width: 20em;
+}
+#playerlist {
+    position: absolute;
+    top: 0;
+    right: 0;
+    list-style: none;
+    padding: initial;
+    margin: 0
 }
