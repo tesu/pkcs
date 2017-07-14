@@ -13,6 +13,9 @@ Template.chatbox.helpers({
         if (user) return user.username;
         return null;
     },
+    timestamp() {
+        return ("0"+this.createdAt.getHours()).slice(-2) + ":" + ("0"+this.createdAt.getMinutes()).slice(-2) + ":" + ("0"+this.createdAt.getSeconds()).slice(-2);
+    },
 });
 
 
