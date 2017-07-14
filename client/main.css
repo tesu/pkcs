@@ -66,3 +66,10 @@ input, select, button {
     padding: initial;
     margin: 0
 }
+#log {
+    height: 20em;
+    overflow: auto;
+    list-style: none;
+    padding: initial;
+    margin: 0
+}

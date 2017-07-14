@@ -28,9 +28,14 @@
             {{/each}}
         </form>
     {{/if}}
-    {{#each messages}}
-        {{this}}
+    <ul id="log">
+    {{#each s in game.states}}
+        <li>New Turn</li>
+        {{#each m in s.messages}}
+        <li>{{m}}</li>
+        {{/each}}
     {{/each}}
+    </ul>
     <ul id="playerlist">
         {{#each game.players}}
         <li>{{>player}}</li>
