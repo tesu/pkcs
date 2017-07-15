@@ -37,6 +37,9 @@ Template.game_page.helpers({
     game() {
         return Games.findOne(FlowRouter.getParam('_id'));
     },
+    pokemon() {
+        return Pokemon.find({owner: Meteor.userId()});
+    },
     isHost() {
         const game = Games.findOne(FlowRouter.getParam('_id'));
         return game && game.host == Meteor.userId();
@@ -89,8 +92,9 @@ Template.game_page.helpers({
 Template.game_page.events({
     'submit .join-game'(event) {
         event.preventDefault();
+        const pokemon = event.target.pokemon.value;
 
-        Meteor.call('game.join', FlowRouter.getParam('_id'));
+        Meteor.call('game.join', FlowRouter.getParam('_id'), pokemon);
     },
     'submit .start-game'(event) {
         event.preventDefault();

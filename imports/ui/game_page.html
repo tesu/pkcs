@@ -17,6 +17,11 @@
         you are not in this game
         {{#if canJoinGame}}
             <form class="join-game">
+                <select name="pokemon">
+                    {{#each p in pokemon}}
+                    <option value="{{p._id}}">{{p.nickname}}</option>
+                    {{/each}}
+                </select>
                 <input type="submit" value="join game">
             </form>
         {{/if}}

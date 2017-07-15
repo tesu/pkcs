@@ -33,11 +33,14 @@ Meteor.methods({
             state: 0,
         });
     },
-    'game.join'(id) {
+    'game.join'(id, pokemon) {
         if (!Meteor.userId()) throw new Meteor.Error('not-authorized');
+        const p = {};
+        p['pokemon.'+Meteor.userId()] = pokemon;
 
         Games.update(id, {
-            $push: {players: Meteor.userId()}
+            $push: {players: Meteor.userId()},
+            $set: p,
         });
     },
     'game.start'(id) {
