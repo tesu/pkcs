@@ -137,6 +137,16 @@ export const Game = {
             state.messages.push("Entry No. "+(i+1)+"! \n"+p+"'s "+nicknames[p]+"!");
             state.messages.push(nicknames[p]+" got "+scoreToHearts(game.rank, scores[p])+" hearts!");
         }
+        state.messages.push("We've just seen the "+order.length+" Pokemon contestants.");
+        state.messages.push("Now it's time for primary judging!");
+        state.messages.push("The audience will vote on their favorite Pokemon contestants.");
+        state.messages.push("Without any further ado, let the voting begin!");
+        state.messages.push("Voting under way...");
+        state.messages.push("Voting is now complete!");
+        state.messages.push("While the votes are being tallied, let's move on to secondary judging!");
+        state.messages.push("The second stage of judging is the much anticipated appeal time!");
+        state.messages.push("May the contestants amaze us with superb appeals of dazzling moves!");
+        state.messages.push("Let's see a little enthusiasm! \nLet's appeal!");
         for (let i=0; i<order.length; i++) {
             state.messages.push(nicknames[order[i]] + '  is #' + (i+1) + ".")
         }
