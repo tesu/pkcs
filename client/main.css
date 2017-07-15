@@ -5,13 +5,14 @@ body {
     margin: 20px auto;
     max-width: 650px;
     line-height: 1.4;
+    background-color: #B3E2A7;
 }
 input, select, button {
     font-family: 'VT323', serif;
     font-size: 1em;
 }
 #header {
-    background-color: #bcffc7;
+    background-color: #77BD65;
     padding: .5em;
 }
 #header ul {
