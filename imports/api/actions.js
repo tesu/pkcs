@@ -27,15 +27,15 @@ Meteor.methods({
 
         if (Actions.find({game: game._id, turn: game.turn}).count() >= game.players.length) {
             // process turn
-            let nState = Game.process(game);
-
-            Games.update({_id: game._id}, {
-                $inc: {turn: 1},
-                $push: {
-                    //messages: o,
-                    states: nState,
-                },
-            });
+            if (Meteor.isServer) {
+                let nState = Game.process(game); 
+                Games.update({_id: game._id}, {
+                    $inc: {turn: 1},
+                    $push: {
+                        states: nState,
+                    },
+                });
+            }
         }
    },
 });
