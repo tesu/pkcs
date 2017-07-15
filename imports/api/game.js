@@ -130,8 +130,15 @@ export const Game = {
             score: scores,
             messages: [],
         }
+        state.messages.push("Hello! We're just getting started with a " + game.rank + " rank Pokemon " + game.category + " contest!");
+        state.messages.push("The participating trainers and their Pokemon are as follows:");
+        for (let i=0; i<game.players.length; i++) {
+            const p = game.players[i];
+            state.messages.push("Entry No. "+(i+1)+"! \n"+p+"'s "+nicknames[p]+"!");
+            state.messages.push(nicknames[p]+" got "+scoreToHearts(game.rank, scores[p])+" hearts!");
+        }
         for (let i=0; i<order.length; i++) {
-            state.messages.push(nicknames[order[i]] + ' received ' + scoreToHearts(game.rank, scores[order[i]]) + ' hearts and is #' + (i+1))
+            state.messages.push(nicknames[order[i]] + '  is #' + (i+1) + ".")
         }
 
         return state;
