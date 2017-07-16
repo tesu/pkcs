@@ -147,9 +147,9 @@ export const Game = {
         state.messages.push("The second stage of judging is the much anticipated appeal time!");
         state.messages.push("May the contestants amaze us with superb appeals of dazzling moves!");
         state.messages.push("Let's see a little enthusiasm! \nLet's appeal!");
-        for (let i=0; i<order.length; i++) {
-            state.messages.push(nicknames[order[i]] + '  is #' + (i+1) + ".")
-        }
+        //for (let i=0; i<order.length; i++) {
+        //    state.messages.push(nicknames[order[i]] + '  is #' + (i+1) + ".")
+        //}
 
         return state;
     },
