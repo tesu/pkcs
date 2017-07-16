@@ -134,7 +134,8 @@ export const Game = {
         state.messages.push("The participating trainers and their Pokemon are as follows:");
         for (let i=0; i<game.players.length; i++) {
             const p = game.players[i];
-            state.messages.push("Entry No. "+(i+1)+"! \n"+p+"'s "+nicknames[p]+"!");
+            const username = Meteor.users.findOne(p).username;
+            state.messages.push("Entry No. "+(i+1)+"! \n"+username+"'s "+nicknames[p]+"!");
             state.messages.push(nicknames[p]+" got "+scoreToHearts(game.rank, scores[p])+" hearts!");
         }
         state.messages.push("We've just seen the "+order.length+" Pokemon contestants.");
