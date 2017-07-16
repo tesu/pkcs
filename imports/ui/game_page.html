@@ -42,8 +42,8 @@
     {{/each}}
     </ul>
     <ul id="playerlist">
-        {{#each game.players}}
-        <li>{{>player}}</li>
+        {{#each p in turnOrder}}
+        <li>{{>player p=p game=game}}</li>
         {{/each}}
         {{#each emptySlots}}
         <li>empty</li>

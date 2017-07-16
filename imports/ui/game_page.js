@@ -86,7 +86,10 @@ Template.game_page.helpers({
         }
         return null
     },
-
+    turnOrder() {
+        const game = Games.findOne(FlowRouter.getParam('_id'));
+        return game.states[game.states.length-1].order;
+    },
 });
 
 Template.game_page.events({
