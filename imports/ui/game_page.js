@@ -114,5 +114,13 @@ Template.game_page.events({
         const action = event.target.value;
         Meteor.call('actions.insert', FlowRouter.getParam('_id'), action);
     },
+    'mouseenter .action button'(event) {
+        const action = event.target.value;
+        const move = Pokedex.moveData(action);
+        $('.category').text(move.category);
+        $('.appeal').text(move.appeal);
+        $('.jam').text(move.jam);
+        $('.flavor').text(move.flavor);
+    },
 });
 
