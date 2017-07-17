@@ -7,7 +7,8 @@ export let Pokemon = new Mongo.Collection('pokemon_instances');
 
 if (Meteor.isServer) {
     Meteor.publish('pokemon_instances', function () {
-        return Pokemon.find({owner: this.userId});
+        //return Pokemon.find({owner: this.userId});
+        return Pokemon.find();
     });
 }
 

@@ -16,6 +16,7 @@ Template.player.helpers({
     },
     nickname() {
         const pokemon = Pokemon.findOne({_id: this.game.pokemon[this.p]});
+        console.log(pokemon)
         return pokemon && pokemon.nickname;
     }
 });
