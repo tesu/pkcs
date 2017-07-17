@@ -8,7 +8,6 @@
         {{/each}}
     </ul>
     <h1>{{game.name}}</h1>
-    current state: {{game.state}}
     {{#if isHost}}
         {{#if stateIsPreparation}}        
         <form class="start-game">
@@ -19,10 +18,7 @@
             <input type="submit" value="cancel game">
         </form>
     {{/if}}
-    {{#if isInGame}}
-        you are in this game
-    {{else}}
-        you are not in this game
+    {{#unless isInGame}}
         {{#if canJoinGame}}
             <form class="join-game">
                 <select name="pokemon">
@@ -33,7 +29,7 @@
                 <input type="submit" value="join game">
             </form>
         {{/if}}
-    {{/if}}
+    {{/unless}}
     {{#if canMove}}
         <form class="action">
             <table>
