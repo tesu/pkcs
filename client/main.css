@@ -88,6 +88,7 @@ input, select, button {
     float: left;
     width: 3em;
     text-align: center;
+    text-transform: uppercase;
 }
 .action .appeal, .action .jam {
     float: right;
@@ -95,6 +96,9 @@ input, select, button {
 }
 .action .info {
     width: 100%;
+}
+.action .flavor {
+    text-align: center;
 }
 #moves {
     list-style: none;
