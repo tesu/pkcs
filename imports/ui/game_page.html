@@ -28,9 +28,23 @@
     {{/if}}
     {{#if canMove}}
         <form class="action">
-            {{#each move in moves}}
-            <button type="submit" name="action" value="{{move}}">{{name move}}</button>
-            {{/each}}
+            <table>
+                <tr>
+                    <td rowspan="2">
+                        <ul id="moves">
+                            {{#each move in moves}}
+                            <li><button type="submit" name="action" value="{{move}}">{{name move}}</button></li>
+                            {{/each}}
+                        </ul>
+                    </td>
+                    <td>
+                        tough appeal 1 jam 1
+                    </td>
+                </tr>
+                <tr>
+                    <td>flavor text goes here</td>
+                </tr>
+            </table>
         </form>
     {{/if}}
     <ul id="log">
