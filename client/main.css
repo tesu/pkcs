@@ -60,12 +60,18 @@ input, select, button {
     width: 20em;
 }
 #playerlist {
-    position: absolute;
-    top: 0;
-    right: 0;
+    float: right;
     list-style: none;
     padding: initial;
     margin: 0
+}
+#playerlist li {
+    height: 3em;
+    width: 10em;
+    background-color: gold;
+    border: 1px solid black;
+    border-radius: 2px;
+
 }
 #log {
     height: 20em;
@@ -79,6 +85,7 @@ input, select, button {
     border-spacing: 0;
     border-collapse: collapse;
     width: 100%;
+    background-color: cornflowerblue;
 }
 .action td {
     border: 4px solid gray;

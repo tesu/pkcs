@@ -1,4 +1,12 @@
 <template name="game_page">
+    <ul id="playerlist">
+        {{#each p in turnOrder}}
+        <li>{{>player p=p game=game}}</li>
+        {{/each}}
+        {{#each emptySlots}}
+        <li>empty</li>
+        {{/each}}
+    </ul>
     <h1>{{game.name}}</h1>
     current state: {{game.state}}
     {{#if isHost}}
@@ -56,14 +64,6 @@
         <li>{{m}}</li>
         {{/each}}
     {{/each}}
-    </ul>
-    <ul id="playerlist">
-        {{#each p in turnOrder}}
-        <li>{{>player p=p game=game}}</li>
-        {{/each}}
-        {{#each emptySlots}}
-        <li>empty</li>
-        {{/each}}
     </ul>
     {{>chatbox game=game._id}}
 </template>
