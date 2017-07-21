@@ -118,12 +118,17 @@ h1 {
 #dialog {
     height: 6em;
     clear: both;
+
+    border: 5px solid salmon;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 1em;
 }
 #current-message {
     height: 0;
     overflow: visible;
     position: relative;
-    z-index: -1;
+    /* z-index: -1; */
 }
 #moves {
     list-style: none;
