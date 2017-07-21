@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 body {
-    font-family: 'VT323', serif;
+    font-family: 'VT323', monospace;
     font-size: 16px;
     margin: 20px auto;
     max-width: 650px;

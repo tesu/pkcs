@@ -119,8 +119,14 @@ Template.game_page.events({
         const action = event.target.value;
         const move = Pokedex.moveData(action);
         $('.category').text(move.category);
-        $('.appeal').text(move.appeal);
-        $('.jam').text(move.jam);
+        let appeal = "Appeal ";
+        for (let i=0;i<move.appeal;i++) appeal += '♥';
+        for (let i=move.appeal;i<8;i++) appeal += '♡';
+        let jam = "Jam ";
+        for (let i=0;i<move.jam;i++) jam += '♥';
+        for (let i=move.jam;i<8;i++) jam += '♡';
+        $('.appeal').text(appeal);
+        $('.jam').text(jam);
         $('.flavor').text(move.flavor);
     },
 });
