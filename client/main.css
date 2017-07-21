@@ -11,6 +11,9 @@ input, select, button {
     font-family: 'VT323', serif;
     font-size: 1em;
 }
+h1 {
+    clear: both;
+}
 #header {
     background-color: #77BD65;
     padding: .5em;
@@ -106,6 +109,11 @@ input, select, button {
 }
 .action .flavor {
     text-align: center;
+}
+#stage {
+    background-color: lightgreen;
+    height: 12em;
+    margin-right: 10em;
 }
 #moves {
     list-style: none;
