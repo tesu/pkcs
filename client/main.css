@@ -115,6 +115,16 @@ h1 {
     height: 12em;
     margin-right: 10em;
 }
+#dialog {
+    height: 6em;
+    clear: both;
+}
+#current-message {
+    height: 0;
+    overflow: visible;
+    position: relative;
+    z-index: -1;
+}
 #moves {
     list-style: none;
     padding: initial;
