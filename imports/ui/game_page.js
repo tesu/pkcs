@@ -23,7 +23,7 @@ Template.game_page.onCreated(function() {
     sub.push(Meteor.subscribe('cep'));
 
     this.state = new ReactiveDict();
-    this.state.set('message', 0);
+    if (!this.state.get('message')) this.state.set('message', 0);
 });
 
 Template.game_page.onDestroyed(function bodyOnDestroyed() {
