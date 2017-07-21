@@ -1,4 +1,6 @@
 import {Template} from 'meteor/templating';
+import {ReactiveDict} from 'meteor/reactive-dict';
+import {Tracker} from 'meteor/tracker';
 
 import {Games} from '../api/games.js';
 import {Actions} from '../api/actions.js';
@@ -10,7 +12,7 @@ import './chatbox.js';
 import './game_page.html';
 
 let sub = Array();
-Template.game_page.onCreated(function bodyOnCreated() {
+Template.game_page.onCreated(function() {
     sub.push(Meteor.subscribe('game', FlowRouter.getParam('_id')));
     sub.push(Meteor.subscribe('chat', FlowRouter.getParam('_id')));
     sub.push(Meteor.subscribe('actions', FlowRouter.getParam('_id')));
@@ -19,6 +21,9 @@ Template.game_page.onCreated(function bodyOnCreated() {
     sub.push(Meteor.subscribe('moves'));
     sub.push(Meteor.subscribe('ce'));
     sub.push(Meteor.subscribe('cep'));
+
+    this.state = new ReactiveDict();
+    this.state.set('message', 0);
 });
 
 Template.game_page.onDestroyed(function bodyOnDestroyed() {
@@ -91,6 +96,14 @@ Template.game_page.helpers({
         if (game.state == 0) return game.players;
         return game.states[game.states.length-1].order;
     },
+    text() {
+        const instance = Template.instance();
+        const game = Games.findOne(FlowRouter.getParam('_id'));
+        let messages = [];
+        for (let i=0;i<game.states.length;i++)
+            messages = messages.concat(game.states[i].messages);
+        return messages[instance.state.get('message')];
+    },
 });
 
 Template.game_page.events({
@@ -128,6 +141,10 @@ Template.game_page.events({
         $('.appeal').text(appeal);
         $('.jam').text(jam);
         $('.flavor').text(move.flavor);
+    },
+    'click #dialog'(event) {
+        const instance = Template.instance();
+        instance.state.set('message', instance.state.get('message')+1);
     },
 });
 
