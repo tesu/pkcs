@@ -33,7 +33,11 @@
     <div id="stage"></div>
     <div id="dialog">
     {{#unless canMove}}
-        <div id="current-message">{{text}}</div>
+        <div id="current-message">
+            {{text}}
+            <button id="skip">Skip</button>
+            <button id="back">Back</button>
+        </div>
     {{else}}
         <form class="action">
             <table>
