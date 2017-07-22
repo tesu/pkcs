@@ -32,8 +32,9 @@
     {{/unless}}
     <div id="stage"></div>
     <div id="dialog">
+    {{#unless canMove}}
         <div id="current-message">{{text}}</div>
-    {{#if canMove}}
+    {{else}}
         <form class="action">
             <table>
                 <tr>
@@ -55,7 +56,7 @@
                 </tr>
             </table>
         </form>
-    {{/if}}
+    {{/unless}}
     </div>
     <ul id="log">
     {{#each s in game.states}}
