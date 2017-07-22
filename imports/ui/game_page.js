@@ -19,6 +19,7 @@ Template.game_page.onCreated(function() {
         let messages = [];
         for (let i=0;i<game.states.length;i++)
             messages = messages.concat(game.states[i].messages);
+        console.log(messages);
         self.state.set('queue', messages);
     });
     Meteor.subscribe('chat', FlowRouter.getParam('_id'));
@@ -31,13 +32,14 @@ Template.game_page.onCreated(function() {
 
     this.state = new ReactiveDict();
     if (!this.state.get('message')) this.state.set('message', 0);
+    if (!this.state.get('queue')) this.state.set('queue', []);
 
     const handle = Games.find(FlowRouter.getParam('_id')).observeChanges({
         changed(id, game) {
             let messages = [];
             for (let i=0;i<game.states.length;i++)
                 messages = messages.concat(game.states[i].messages);
-            Template.instance().state.set('queue', messages);
+            self.state.set('queue', messages);
         },
     });
 });
@@ -77,7 +79,8 @@ Template.game_page.helpers({
     },
     canMove() {
         const game = Games.findOne({_id: FlowRouter.getParam('_id'), players: Meteor.userId()});
-        if (game) return game.state > 0 && Actions.find({user: Meteor.userId(), turn: game.turn, game: game._id}, {limit: 1}).count(true) == 0;
+        const instance = Template.instance();
+        if (game) return game.state > 0 && Actions.find({user: Meteor.userId(), turn: game.turn, game: game._id}, {limit: 1}).count(true) == 0 && instance.state.get('message') >= instance.state.get('queue').length;
         return null;
     },
     moves() {

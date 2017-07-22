@@ -32,6 +32,7 @@ Meteor.methods({
             category: c,
             pokemon: p,
             state: 0,
+            states: [],
         });
     },
     'game.join'(id, pokemon) {
