@@ -11,26 +11,35 @@ import './player.js';
 import './chatbox.js';
 import './game_page.html';
 
-let sub = Array();
 Template.game_page.onCreated(function() {
-    sub.push(Meteor.subscribe('game', FlowRouter.getParam('_id')));
-    sub.push(Meteor.subscribe('chat', FlowRouter.getParam('_id')));
-    sub.push(Meteor.subscribe('actions', FlowRouter.getParam('_id')));
-    sub.push(Meteor.subscribe('results', FlowRouter.getParam('_id')));
-    sub.push(Meteor.subscribe('pokemon_instances'));
-    sub.push(Meteor.subscribe('moves'));
-    sub.push(Meteor.subscribe('ce'));
-    sub.push(Meteor.subscribe('cep'));
+    const self = this;
+
+    Meteor.subscribe('game', FlowRouter.getParam('_id'), function() {
+        const game = Games.findOne(FlowRouter.getParam('_id'));
+        let messages = [];
+        for (let i=0;i<game.states.length;i++)
+            messages = messages.concat(game.states[i].messages);
+        self.state.set('queue', messages);
+    });
+    Meteor.subscribe('chat', FlowRouter.getParam('_id'));
+    Meteor.subscribe('actions', FlowRouter.getParam('_id'));
+    Meteor.subscribe('results', FlowRouter.getParam('_id'));
+    Meteor.subscribe('pokemon_instances');
+    Meteor.subscribe('moves');
+    Meteor.subscribe('ce');
+    Meteor.subscribe('cep');
 
     this.state = new ReactiveDict();
     if (!this.state.get('message')) this.state.set('message', 0);
-});
 
-Template.game_page.onDestroyed(function bodyOnDestroyed() {
-    for (let i = 0; i < sub.length; i++) {
-        sub[i].stop();
-    }
-    sub.length = 0;
+    const handle = Games.find(FlowRouter.getParam('_id')).observeChanges({
+        changed(id, game) {
+            let messages = [];
+            for (let i=0;i<game.states.length;i++)
+                messages = messages.concat(game.states[i].messages);
+            Template.instance().state.set('queue', messages);
+        },
+    });
 });
 
 Template.game_page.helpers({
@@ -93,16 +102,12 @@ Template.game_page.helpers({
     },
     turnOrder() {
         const game = Games.findOne(FlowRouter.getParam('_id'));
-        if (game.state == 0) return game.players;
-        return game.states[game.states.length-1].order;
+        if (game && game.state == 0) return game.players;
+        return game && game.states[game.states.length-1].order;
     },
     text() {
         const instance = Template.instance();
-        const game = Games.findOne(FlowRouter.getParam('_id'));
-        let messages = [];
-        for (let i=0;i<game.states.length;i++)
-            messages = messages.concat(game.states[i].messages);
-        return messages[instance.state.get('message')];
+        return instance.state.get('queue') [instance.state.get('message')];
     },
 });
 
@@ -144,7 +149,11 @@ Template.game_page.events({
     },
     'click #dialog'(event) {
         const instance = Template.instance();
-        instance.state.set('message', instance.state.get('message')+1);
+        const m = instance.state.get('message');
+        const messages = instance.state.get('queue');
+        if (m<messages.length) {
+            instance.state.set('message', m+1);
+        }
     },
 });
 
