@@ -110,7 +110,10 @@ Template.game_page.helpers({
     },
     text() {
         const instance = Template.instance();
-        return instance.state.get('queue') [instance.state.get('message')];
+        const q = instance.state.get('queue');
+        const m = instance.state.get('message');
+        if (m>=q.length) return 'Waiting on players...';
+        return q[m];
     },
 });
 
