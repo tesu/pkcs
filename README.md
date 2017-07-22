@@ -8,10 +8,11 @@ you need meteor installed first
 3. `meteor`
 
 ## Todo List / Roadmap
-* skip/prev script navigation
 * handle game end
 * add more stuff to script to interact with frontend
-* implement frontend animations
+* implement frontend animations / actual images
 * improve spectator experience
 * improve security
+* turn timers
+* better + faster pokemon editing ui
 
