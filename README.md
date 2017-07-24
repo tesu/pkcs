@@ -8,6 +8,7 @@ you need meteor installed first
 3. `meteor`
 
 ## Todo List / Roadmap
+* implement applause meter
 * handle game end
 * add more stuff to script to interact with frontend
 * implement frontend animations / actual images
