@@ -114,6 +114,21 @@ h1 {
     background-color: lightgreen;
     height: 12em;
     margin-right: 10em;
+    overflow: auto;
+}
+#applause {
+    background-color: khaki;
+    color: red;
+    width: 5em;
+    border: 1px solid brown;
+    border-radius: 15px;
+    padding: .5em;
+    margin: .5em;
+    text-align: center;
+}
+#applause hr {
+    border: 1px solid;
+    margin: 0;
 }
 #dialog {
     height: 6em;
