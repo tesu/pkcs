@@ -19,7 +19,6 @@ Template.game_page.onCreated(function() {
         let messages = [];
         for (let i=0;i<game.states.length;i++)
             messages = messages.concat(game.states[i].messages);
-        console.log(messages);
         self.state.set('queue', messages);
     });
     Meteor.subscribe('chat', FlowRouter.getParam('_id'));
