@@ -232,6 +232,11 @@ export const Game = {
                 nState.excitement = 0;
             }
 
+            nState.messages.push({
+                type: 'applause',
+                value: nState.excitement,
+            });
+
             switch (move.effect_id) {
                 case 1:
                     // Gives a high number of appeal points with no other effects.

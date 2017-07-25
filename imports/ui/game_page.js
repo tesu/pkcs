@@ -156,16 +156,20 @@ Template.game_page.events({
     },
     'click #dialog'(event) {
         const instance = Template.instance();
-        const m = instance.state.get('message');
+        let m = instance.state.get('message');
         const messages = instance.state.get('queue');
         while (m<messages.length) {
-            instance.state.set('message', m+1);
-            if (m+1>=messages.length) break;
-            if (typeof messages[m+1] === 'string') break;
-            const message = messages[m+1];
+            instance.state.set('message', ++m);
+            if (m>=messages.length) break;
+            if (typeof messages[m] === 'string') break;
+            const message = messages[m];
             switch (message.type) {
                 case 'applause':
-                    console.log(message.value);
+                    let s = '';
+                    for (let i=0;i<message.value;i++) s+='●';
+                    for (let i=message.value;i<5;i++) s+='◯';
+                    $('#applause-count').text(s);
+                    break;
             }
         }
     },
