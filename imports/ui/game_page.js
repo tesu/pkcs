@@ -159,8 +159,15 @@ Template.game_page.events({
         const instance = Template.instance();
         const m = instance.state.get('message');
         const messages = instance.state.get('queue');
-        if (m<messages.length) {
+        while (m<messages.length) {
             instance.state.set('message', m+1);
+            if (m+1>=messages.length) break;
+            if (typeof messages[m+1] === 'string') break;
+            const message = messages[m+1];
+            switch (message.type) {
+                case 'applause':
+                    console.log(message.value);
+            }
         }
     },
     'click #skip'(event) {
