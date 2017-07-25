@@ -143,6 +143,8 @@ Template.game_page.events({
         const action = event.target.value;
         const move = Pokedex.moveData(action);
         $('.category').text(move.category);
+        $('.category').removeClass('cool beauty cute clever tough');
+        $('.category').addClass(move.category);
         let appeal = "Appeal ";
         for (let i=0;i<move.appeal;i++) appeal += '♥';
         for (let i=move.appeal;i<8;i++) appeal += '♡';

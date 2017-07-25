@@ -99,6 +99,22 @@ h1 {
     width: 3em;
     text-align: center;
     text-transform: uppercase;
+    margin-left: .2em;
+}
+.action .category.cool {
+    background-color: orange;
+}
+.action .category.beauty {
+    background-color: blue;
+}
+.action .category.cute {
+    background-color: pink;
+}
+.action .category.clever {
+    background-color: green;
+}
+.action .category.tough {
+    background-color: yellow;
 }
 .action .appeal, .action .jam {
     float: right;
