@@ -2,7 +2,8 @@ import {Template} from 'meteor/templating';
 import {ReactiveDict} from 'meteor/reactive-dict';
 import {Tracker} from 'meteor/tracker';
 
-import {Games} from '../api/games.js'; import {Actions} from '../api/actions.js';
+import {Games} from '../api/games.js'; 
+import {Actions} from '../api/actions.js';
 import {Pokemon} from '../api/pokemon.js';
 import {Pokedex} from '../api/pokedex.js';
 
@@ -89,23 +90,6 @@ Template.game_page.helpers({
     },
     actions() {
         return Actions.find({game:FlowRouter.getParam('_id')});
-    },
-    emptySlots() {
-        const game = Games.findOne(FlowRouter.getParam('_id'));
-        if (game) {
-            var o = Array();
-            for (var i = 0; i < 4-game.players.length; i++) {
-                o[i] = '';
-            }
-            return o
-        }
-        return null
-    },
-    turnOrder() {
-        const instance = Template.instance();
-        const game = Games.findOne(FlowRouter.getParam('_id'));
-        if (game && game.state == 0) return game && game.players;
-        return game && Games.findOne(FlowRouter.getParam('_id'), {reactive: false}).players;
     },
     text() {
         const instance = Template.instance();
