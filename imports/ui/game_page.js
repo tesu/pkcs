@@ -133,6 +133,10 @@ function updateUI(message) {
             }
             $('#'+message.player+' .hearts').text(s);
             break;
+        case 'condition':
+            for (let i=0;i<message.value;i++) s+='★';
+            $('#'+message.player+' .condition').text(s);
+            break;
     }
 }
 
