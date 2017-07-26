@@ -196,13 +196,5 @@ Template.game_page.events({
             updateUI(messages[m]);
         }
     },
-    'click #back'(event) {
-        const instance = Template.instance();
-        const m = instance.state.get('message');
-        if (m>0) {
-            // for now its -2 to offset the +1 from normal click
-            instance.state.set('message', m-2);
-        }
-    },
 });
 
