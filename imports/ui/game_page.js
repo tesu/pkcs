@@ -6,7 +6,7 @@ import {Games} from '../api/games.js'; import {Actions} from '../api/actions.js'
 import {Pokemon} from '../api/pokemon.js';
 import {Pokedex} from '../api/pokedex.js';
 
-import './player.js';
+import './playerlist.js';
 import './chatbox.js';
 import './game_page.html';
 
@@ -102,9 +102,10 @@ Template.game_page.helpers({
         return null
     },
     turnOrder() {
+        const instance = Template.instance();
         const game = Games.findOne(FlowRouter.getParam('_id'));
-        if (game && game.state == 0) return game.players;
-        return game && game.states[game.states.length-1].order;
+        if (game && game.state == 0) return game && game.players;
+        return game && Games.findOne(FlowRouter.getParam('_id'), {reactive: false}).players;
     },
     text() {
         const instance = Template.instance();
@@ -136,6 +137,21 @@ function updateUI(message) {
         case 'condition':
             for (let i=0;i<message.value;i++) s+='★';
             $('#'+message.player+' .condition').text(s);
+            break;
+        case 'order':
+            const list = $('#playerlist');
+            const li = list.children('li');
+
+            li.detach().sort(function(a,b) {
+                if (!$(a).attr('id')) return 1;
+                if (!$(b).attr('id')) return -1;
+                return message.value.indexOf($(a).attr('id')) - message.value.indexOf($(b).attr('id'));
+            });
+            console.log(li);
+            list.append(li);
+            break;
+        default:
+            console.log('unsupported message type: '+message.type);
             break;
     }
 }

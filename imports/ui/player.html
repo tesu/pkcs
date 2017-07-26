@@ -1,4 +1,5 @@
 <template name="player">
+    {{#if id}}
     <li id="{{id}}">
         <div class="nickname">{{nickname}}</div>
         <div class="username">/{{username}}</div>
@@ -8,4 +9,9 @@
             <div class="hearts"></div>
         </div>
     </li>
+    {{else}}
+    <li>
+        empty
+    </li>
+    {{/if}}
 </template>

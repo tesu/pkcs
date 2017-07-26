@@ -1,0 +1,7 @@
+<template name="playerlist">
+    <ul id="playerlist">
+        {{#each p in turnOrder}}
+        {{>player p=p game=game}}
+        {{/each}}
+    </ul>
+</template>

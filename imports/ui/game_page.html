@@ -1,13 +1,6 @@
 <template name="game_page">
     <h1>{{game.name}}</h1>
-    <ul id="playerlist">
-        {{#each p in turnOrder}}
-        {{>player p=p game=game}}
-        {{/each}}
-        {{#each emptySlots}}
-        <li>empty</li>
-        {{/each}}
-    </ul>
+    {{>playerlist}}
     {{#if isHost}}
         {{#if stateIsPreparation}}        
         <form class="start-game">

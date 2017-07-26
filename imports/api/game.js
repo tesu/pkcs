@@ -455,6 +455,10 @@ export const Game = {
         }
 
         nState.order = order;
+        nState.messages.push({
+            type: 'order',
+            value: order,
+        });
 
         for (let i=0; i<pState.order.length; i++) {
             const player = pState.order[i];
