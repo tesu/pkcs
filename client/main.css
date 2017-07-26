@@ -74,7 +74,32 @@ h1 {
     background-color: gold;
     border: 1px solid black;
     border-radius: 2px;
-
+}
+#playerlist .nickname {
+    float: left;
+}
+#playerlist .username {
+    float: right;
+}
+#playerlist .info {
+    display: flex;
+    clear: both;
+    padding-left: 1em;
+}
+#playerlist .status {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    border: 1px solid black;
+    border-radius: 3px;
+    align-self: center;
+}
+#playerlist .hearts {
+    display: inline-block;
+    color: red;
+}
+#playerlist .hearts.negative {
+    color: black;
 }
 #log {
     height: 20em;
