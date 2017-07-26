@@ -8,6 +8,7 @@ you need meteor installed first
 3. `meteor`
 
 ## Todo List / Roadmap
+* update turn order animation
 * handle game end
 * implement frontend animations / actual images
 * improve spectator experience
