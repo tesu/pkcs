@@ -451,7 +451,7 @@ export const Game = {
         if (nState.shuffle) {
             order = shuffle(pState.order); 
         } else {
-            order = pState.order.sort(function(a,b){return nState.hearts[a]-nState.hearts[b];});
+            order = pState.order.sort(function(a,b){return nState.hearts[b]-nState.hearts[a];});
         }
 
         nState.order = order;
