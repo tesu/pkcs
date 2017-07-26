@@ -84,7 +84,12 @@ h1 {
 #playerlist .info {
     display: flex;
     clear: both;
-    padding-left: 1em;
+}
+#playerlist .condition {
+    width: 1em;
+    writing-mode: tb-rl;
+    letter-spacing: -.75em;
+    margin-top: -.5em;
 }
 #playerlist .status {
     display: inline-block;
