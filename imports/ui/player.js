@@ -14,6 +14,9 @@ Template.player.helpers({
         const user = Meteor.users.findOne({_id: this.p});
         return user && user.username;
     },
+    id() {
+        return this.p;
+    },
     nickname() {
         const pokemon = Pokemon.findOne({_id: this.game.pokemon[this.p]});
         return pokemon && pokemon.nickname;

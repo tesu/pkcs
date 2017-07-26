@@ -2,8 +2,7 @@ import {Template} from 'meteor/templating';
 import {ReactiveDict} from 'meteor/reactive-dict';
 import {Tracker} from 'meteor/tracker';
 
-import {Games} from '../api/games.js';
-import {Actions} from '../api/actions.js';
+import {Games} from '../api/games.js'; import {Actions} from '../api/actions.js';
 import {Pokemon} from '../api/pokemon.js';
 import {Pokedex} from '../api/pokedex.js';
 
@@ -163,12 +162,22 @@ Template.game_page.events({
             if (m>=messages.length) break;
             if (typeof messages[m] === 'string') break;
             const message = messages[m];
+            let s = '';
             switch (message.type) {
                 case 'applause':
-                    let s = '';
                     for (let i=0;i<message.value;i++) s+='●';
                     for (let i=message.value;i<5;i++) s+='◯';
                     $('#applause-count').text(s);
+                    break;
+                case 'hearts':
+                    if (message.value < 0) {
+                        $('#'+message.player+' .hearts').addClass('negative');
+                        for (let i=0;i<0-message.value;i++) s+='♥';
+                    } else {
+                        $('#'+message.player+' .hearts').removeClass('negative');
+                        for (let i=0;i<message.value;i++) s+='♥';
+                    }
+                    $('#'+message.player+' .hearts').text(s);
                     break;
             }
         }
