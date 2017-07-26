@@ -131,7 +131,6 @@ function updateUI(message) {
                 if (!$(b).attr('id')) return -1;
                 return message.value.indexOf($(a).attr('id')) - message.value.indexOf($(b).attr('id'));
             });
-            console.log(li);
             list.append(li);
             break;
         default:
