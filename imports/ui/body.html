@@ -16,6 +16,8 @@
 
 <template name="index">
     {{#if currentUser}}
+    <button id="toggle-game-form">Setup Game</button>
+    {{#if showGameForm}}
         <form class="new-game">
             <table>
                 <tr>
@@ -52,6 +54,7 @@
             </table>
             <input type="submit" value="Create Game">
         </form>
+    {{/if}}
     {{/if}}
     <ul class="lobby-list">
         {{#each games}}
