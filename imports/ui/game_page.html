@@ -60,14 +60,6 @@
         </form>
     {{/unless}}
     </div>
-    <ul id="log">
-    {{#each s in game.states}}
-        <li>New Turn</li>
-        {{#each m in s.messages}}
-        <li>{{m}}</li>
-        {{/each}}
-    {{/each}}
-    </ul>
     {{>chatbox game=game._id}}
 </template>
 
