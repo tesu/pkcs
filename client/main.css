@@ -90,6 +90,7 @@ h1 {
     writing-mode: tb-rl;
     letter-spacing: -.75em;
     margin-top: -.5em;
+    color: cornflowerblue;
 }
 #playerlist .status {
     display: inline-block;
