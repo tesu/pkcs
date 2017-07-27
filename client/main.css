@@ -162,6 +162,11 @@ h1 {
     height: 12em;
     margin-right: 10em;
     overflow: auto;
+
+    background-image: url(/bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
 }
 #applause {
     background-color: khaki;
