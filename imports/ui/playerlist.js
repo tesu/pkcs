@@ -23,7 +23,6 @@ Template.playerlist.helpers({
             return o;
         }());
         if (game && game.state != 0) instance.state.set('order', o);
-        console.log('redraw');
         return o;
     },
     game() {
