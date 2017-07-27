@@ -1,28 +1,6 @@
 <template name="game_page">
     <h1>{{game.name}}</h1>
     {{>playerlist}}
-    {{#if isHost}}
-        {{#if stateIsPreparation}}        
-        <form class="start-game">
-            <input type="submit" value="start game">
-        </form>
-        {{/if}}
-        <form class="delete-game">
-            <input type="submit" value="cancel game">
-        </form>
-    {{/if}}
-    {{#unless isInGame}}
-        {{#if canJoinGame}}
-            <form class="join-game">
-                <select name="pokemon">
-                    {{#each p in pokemon}}
-                    <option value="{{p._id}}">{{p.nickname}}</option>
-                    {{/each}}
-                </select>
-                <input type="submit" value="join game">
-            </form>
-        {{/if}}
-    {{/unless}}
     <div id="stage">
         <div id="applause">
             APPLAUSE
@@ -60,6 +38,28 @@
         </form>
     {{/unless}}
     </div>
+    {{#if isHost}}
+        {{#if stateIsPreparation}}        
+        <form class="start-game">
+            <input type="submit" value="start game">
+        </form>
+        {{/if}}
+        <form class="delete-game">
+            <input type="submit" value="cancel game">
+        </form>
+    {{/if}}
+    {{#unless isInGame}}
+        {{#if canJoinGame}}
+            <form class="join-game">
+                <select name="pokemon">
+                    {{#each p in pokemon}}
+                    <option value="{{p._id}}">{{p.nickname}}</option>
+                    {{/each}}
+                </select>
+                <input type="submit" value="join game">
+            </form>
+        {{/if}}
+    {{/unless}}
     {{>chatbox game=game._id}}
 </template>
 
