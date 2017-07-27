@@ -1,5 +1,6 @@
 <template name="chatbox">
     <div class="chatbox">
+        {{#unless chatHidden}}
         <ul>
             {{#each chat}}
             <li><strong>[{{timestamp}}] {{username}}:</strong> {{this.text}}</li>
@@ -8,6 +9,8 @@
         <form class="chat-box">
             <input type="text" name="text" placeholder="Chat">
         </form>
+        {{/unless}}
+        <a href="#" class="toggle-chat-box">toggle chat</a>
     </div>
 </template>
 

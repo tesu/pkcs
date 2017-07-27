@@ -1,10 +1,18 @@
 import {Template} from 'meteor/templating';
+import {ReactiveDict} from 'meteor/reactive-dict';
 
 import {Chat} from '../api/chat.js';
 
 import './chatbox.html';
 
+Template.chatbox.onCreated(function() {
+    this.state = new ReactiveDict();
+});
+
 Template.chatbox.helpers({
+    chatHidden() {
+        return Template.instance().state.get('hide-chat');
+    },
     chat() {
         return Chat.find({game: FlowRouter.getParam('_id')}, {sort: {createdAt: 1}});
     },
@@ -20,6 +28,11 @@ Template.chatbox.helpers({
 
 
 Template.chatbox.events({
+    'click .toggle-chat-box'(event) {
+        const instance = Template.instance();
+        instance.state.set('hide-chat', !instance.state.get('hide-chat'));
+        console.log(instance.state.get('hide-chat'));
+    },
     'submit .chat-box'(event) {
         event.preventDefault();
 
@@ -30,5 +43,4 @@ Template.chatbox.events({
         event.target.text.value = '';
     },
 });
-
 
