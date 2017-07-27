@@ -8,7 +8,6 @@ you need meteor installed first
 3. `meteor`
 
 ## Todo List / Roadmap
-* update turn order animation
 * handle game end
 * implement frontend animations / actual images
 * improve spectator experience
@@ -16,5 +15,4 @@ you need meteor installed first
 * turn timers
 * better + faster pokemon editing ui
 * debug backend / make it more accurate
-
 
