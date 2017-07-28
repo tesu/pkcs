@@ -31,7 +31,6 @@ Template.chatbox.events({
     'click .toggle-chat-box'(event) {
         const instance = Template.instance();
         instance.state.set('hide-chat', !instance.state.get('hide-chat'));
-        console.log(instance.state.get('hide-chat'));
     },
     'submit .chat-box'(event) {
         event.preventDefault();
