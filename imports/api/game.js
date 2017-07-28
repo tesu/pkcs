@@ -480,7 +480,20 @@ export const Game = {
             if (f.skipped) f.skipped = false;
         }
 
-        console.log(game.turn)
         return nState;
+    },
+    'end'(game) {
+        console.log('game should end here');
+        return;
+        state = {
+            messages: [],
+        }
+        state.messages.push("We're all out of Appeal Time!");
+        state.messages.push("That's it for judging!");
+        state.messages.push("Thank you all for a most wonderful display of quality appeals!");
+        state.messages.push("This concludes all judging! \nThank you for your fine efforts!");
+        state.messages.push("Now, all that remains is the pulse-pounding proclamation of the winner.");
+        state.messages.push("The judge looks ready to make the announcement!");
+        state.messages.push("We will now declare the winner!");
     },
 }

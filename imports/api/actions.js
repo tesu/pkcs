@@ -35,6 +35,13 @@ Meteor.methods({
                         states: nState,
                     },
                 });
+
+                if (game.turn>=4) {
+                    Game.end(game);
+                    /*Games.update({_id: game._id}, {
+
+                    });*/
+                }
             }
         }
    },
