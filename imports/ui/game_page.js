@@ -133,6 +133,10 @@ function updateUI(message) {
             });
             list.append(li);
             break;
+        case 'new-attacking-pokemon':
+            $('.attacking-pokemon').attr('src', '/sprites/back/'+message.value+'.png');
+            console.log(message.value);
+            break;
         default:
             console.log('unsupported message type: '+message.type);
             break;

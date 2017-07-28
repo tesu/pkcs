@@ -191,6 +191,10 @@ export const Game = {
             const compatibility = categoryCompatibility(move.category, game.category);
 
             nState.messages.push(pokemon.nickname + ' appealed with ' + move.identifier + '!');
+            nState.messages.push({
+                type: 'new-attacking-pokemon',
+                value: Pokedex.idToId(pokemon.identifier),
+            });
             
             if (!nState.noApplause) {
                 if (move.effect_id == 13) {

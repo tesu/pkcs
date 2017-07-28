@@ -88,6 +88,10 @@ function idToCategory(i) {
             return 'tough';
     }
 }
+Pokedex.idToId = function(id) {
+    const p = Pokedex._collections.pokemon.findOne({identifier: id});
+    return p.species_id;
+}
 Pokedex.moveData = function(move) {
     const m = Pokedex._collections.moves.findOne({identifier: move});
     if (!m) return null;
