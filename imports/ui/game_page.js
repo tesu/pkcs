@@ -108,6 +108,12 @@ Template.game_page.helpers({
         if (m>=q.length) return 'Waiting on players...';
         return q[m];
     },
+    atEnd() {
+        const instance = Template.instance();
+        const q = instance.state.get('queue');
+        const m = instance.state.get('message');
+        return (m>=q.length);
+    },
 });
 
 function updateUI(message) {

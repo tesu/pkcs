@@ -13,7 +13,9 @@
     {{#unless canMove}}
         <div id="current-message">
             {{text}}
+            {{#unless atEnd}}
             <button id="skip">Skip</button>
+            {{/unless}}
         </div>
     {{else}}
         <form class="action">
