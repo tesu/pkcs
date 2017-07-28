@@ -164,10 +164,18 @@ h1 {
     overflow: auto;
     overflow-y: hidden;
 
-    background-image: url(/bg.png);
-    background-repeat: no-repeat;
+    background-image: url(/tile.png);
+    background-repeat: repeat-x;
+    background-position: right 38px top 0;
     background-size: contain;
     image-rendering: pixelated;
+
+    position: relative;
+}
+#stage #judge {
+    height: inherit;
+    position: absolute;
+    right: 0;
 }
 #stage .attacking-pokemon {
     height: 192px;
