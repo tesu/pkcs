@@ -41,6 +41,16 @@ Template.game_page.onCreated(function() {
             self.state.set('queue', messages);
         },
     });
+
+    self.autorun(function() {
+        const instance = Template.instance();
+        let m = instance.state.get('message');
+        const messages = instance.state.get('queue');
+        if (m<messages.length && typeof messages[m] !== 'string') {
+            updateUI(messages[m]);
+            instance.state.set('message', m+1);
+        }
+    });
 });
 
 Template.game_page.helpers({
@@ -135,7 +145,6 @@ function updateUI(message) {
             break;
         case 'new-attacking-pokemon':
             $('.attacking-pokemon').attr('src', '/sprites/back/'+message.value+'.png');
-            console.log(message.value);
             break;
         default:
             console.log('unsupported message type: '+message.type);
@@ -185,12 +194,7 @@ Template.game_page.events({
         const instance = Template.instance();
         let m = instance.state.get('message');
         const messages = instance.state.get('queue');
-        while (m<messages.length) {
-            instance.state.set('message', ++m);
-            if (m>=messages.length) break;
-            if (typeof messages[m] === 'string') break;
-            updateUI(messages[m]);
-        }
+        if (m<messages.length) instance.state.set('message',m+1);
     },
     'click #skip'(event) {
         const instance = Template.instance();
@@ -198,9 +202,7 @@ Template.game_page.events({
         const messages = instance.state.get('queue');
         while (m<messages.length) {
             instance.state.set('message', ++m);
-            if (m>=messages.length) break;
-            if (typeof messages[m] === 'string') continue;
-            updateUI(messages[m]);
+            Tracker.flush();
         }
     },
 });
