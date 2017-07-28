@@ -9,10 +9,11 @@ you need meteor installed first
 
 ## Todo List / Roadmap
 * handle game end
-* implement frontend animations / actual images
 * improve spectator experience
+* status effects
 * improve security
 * turn timers
 * better + faster pokemon editing ui
 * debug backend / make it more accurate
+* move animations
 
