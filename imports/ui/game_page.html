@@ -1,14 +1,16 @@
 <template name="game_page">
     <h1>{{game.name}}</h1>
-    {{>playerlist}}
-    <div id="stage">
-        <img id="judge" src="/bg.png">
-        <div id="applause">
-            APPLAUSE
-            <hr>
-            <span id="applause-count">◯◯◯◯◯</span>
+    <div id="game">
+        {{>playerlist}}
+        <div id="stage">
+            <img id="judge" src="/bg.png">
+            <div id="applause">
+                APPLAUSE
+                <hr>
+                <span id="applause-count">◯◯◯◯◯</span>
+            </div>
+            <img class="attacking-pokemon" src="/sprites/back/1.png">
         </div>
-        <img class="attacking-pokemon" src="/sprites/back/1.png">
     </div>
     <div id="dialog">
     {{#unless canMove}}

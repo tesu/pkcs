@@ -5,7 +5,6 @@ body {
     margin: 20px auto;
     max-width: 650px;
     line-height: 1.4;
-    background-color: #B3E2A7;
 }
 input, select, button {
     font-family: 'VT323', serif;
@@ -74,6 +73,7 @@ h1 {
     background-color: gold;
     border: 1px solid black;
     border-radius: 2px;
+    border-top: 0;
 }
 #playerlist .nickname {
     float: left;
@@ -156,6 +156,11 @@ h1 {
 }
 .action .flavor {
     text-align: center;
+}
+#game {
+    background-color: black;
+    border: 1px solid black;
+    border-right: 0;
 }
 #stage {
     background-color: lightgreen;
