@@ -159,14 +159,19 @@ h1 {
 }
 #stage {
     background-color: lightgreen;
-    height: 12em;
+    height: 224px;
     margin-right: 10em;
     overflow: auto;
+    overflow-y: hidden;
 
     background-image: url(/bg.png);
     background-repeat: no-repeat;
     background-size: contain;
     image-rendering: pixelated;
+}
+#stage .attacking-pokemon {
+    height: 192px;
+    width: 192px;
 }
 #applause {
     background-color: khaki;
