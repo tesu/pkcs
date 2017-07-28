@@ -480,7 +480,7 @@ export const Game = {
             if (f.skipped) f.skipped = false;
         }
 
+        console.log(game.turn)
         return nState;
-
     },
 }
