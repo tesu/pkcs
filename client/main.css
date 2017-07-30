@@ -61,11 +61,17 @@ h1 {
     left: 0;
     width: 20em;
 }
+#game.scoreboard {
+    border-left: 0;
+}
 #playerlist {
     float: right;
     list-style: none;
     padding: initial;
     margin: 0
+}
+.scoreboard #playerlist {
+    width: 100%;
 }
 #playerlist li {
     height: 3em;
@@ -74,6 +80,10 @@ h1 {
     border: 1px solid black;
     border-radius: 2px;
     border-top: 0;
+}
+.scoreboard #playerlist li {
+    width: 100%;
+    background-color: white;
 }
 #playerlist .nickname {
     float: left;
