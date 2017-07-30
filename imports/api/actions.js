@@ -37,10 +37,12 @@ Meteor.methods({
                 });
 
                 if (game.turn>=4) {
-                    Game.end(game);
-                    /*Games.update({_id: game._id}, {
+                    const endState = Game.end(game);
 
-                    });*/
+                    Games.update({_id: game._id}, {
+                        $set: {state: 2},
+                        $push: {states: endState},
+                    });
                 }
             }
         }

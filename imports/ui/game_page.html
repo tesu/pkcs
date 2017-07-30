@@ -13,6 +13,7 @@
             <img class="intro-pokemon" src="/sprites/1.png">
         </div>
     </div>
+    {{#if stateIsIngame}}        
     <div id="dialog">
     {{#unless canMove}}
         <div id="current-message">
@@ -45,6 +46,7 @@
         </form>
     {{/unless}}
     </div>
+    {{/if}}
     {{#if isHost}}
         {{#if stateIsPreparation}}        
         <form class="start-game">

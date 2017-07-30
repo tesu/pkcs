@@ -497,8 +497,6 @@ export const Game = {
         return nState;
     },
     'end'(game) {
-        console.log('game should end here');
-        return;
         state = {
             messages: [],
         }
@@ -509,5 +507,9 @@ export const Game = {
         state.messages.push("Now, all that remains is the pulse-pounding proclamation of the winner.");
         state.messages.push("The judge looks ready to make the announcement!");
         state.messages.push("We will now declare the winner!");
+        state.messages.push({
+            type: 'show-scoreboard',
+        })
+        return state;
     },
 }

@@ -82,6 +82,22 @@ Template.game_page.helpers({
         if (game) return game.state == 0;
         return null;
     },
+    stateIsIngame() {
+        const instance = Template.instance();
+        const q = instance.state.get('queue');
+        const m = instance.state.get('message');
+        const game = Games.findOne(FlowRouter.getParam('_id'));
+        if (game) return game.state == 1 || m < q.length;
+        return null;
+    },
+    stateIsOver() {
+        const instance = Template.instance();
+        const q = instance.state.get('queue');
+        const m = instance.state.get('message');
+        const game = Games.findOne(FlowRouter.getParam('_id'));
+        if (game) return game.state == 2 && m >= q.length;
+        return null;
+    },
     messages() {
         const game = Games.findOne(FlowRouter.getParam('_id'));
         return game && game.states[game.states.length-1].messages;
@@ -89,7 +105,7 @@ Template.game_page.helpers({
     canMove() {
         const game = Games.findOne({_id: FlowRouter.getParam('_id'), players: Meteor.userId()});
         const instance = Template.instance();
-        if (game) return game.state > 0 && Actions.find({user: Meteor.userId(), turn: game.turn, game: game._id}, {limit: 1}).count(true) == 0 && instance.state.get('message') >= instance.state.get('queue').length;
+        if (game) return game.state == 1 && Actions.find({user: Meteor.userId(), turn: game.turn, game: game._id}, {limit: 1}).count(true) == 0 && instance.state.get('message') >= instance.state.get('queue').length;
         return null;
     },
     moves() {
@@ -164,6 +180,9 @@ function updateUI(message) {
             } else {
                 $('.intro-pokemon').css('display', 'none');
             }
+            break;
+        case 'show-scoreboard':
+            $('#game').addClass('scoreboard');
             break;
         default:
             console.log('unsupported message type: '+message.type);
