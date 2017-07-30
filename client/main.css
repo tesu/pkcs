@@ -173,7 +173,9 @@ h1 {
     background-repeat: repeat-x;
     background-position: right 38px top 0;
     background-size: contain;
+
     image-rendering: pixelated;
+    image-rendering: crisp-edges;
 
     position: relative;
 }
