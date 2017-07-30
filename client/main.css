@@ -183,6 +183,7 @@ h1 {
     height: inherit;
     position: absolute;
     right: 0;
+    pointer-events: none;
 }
 #stage .attacking-pokemon {
     height: 192px;
