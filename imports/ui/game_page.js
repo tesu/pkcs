@@ -145,12 +145,25 @@ function updateUI(message) {
             li.detach().sort(function(a,b) {
                 if (!$(a).attr('id')) return 1;
                 if (!$(b).attr('id')) return -1;
-                return message.value.indexOf($(a).attr('id')) - message.value.indexOf($(b).attr('id'));
+                return message.value.indexOf($(a).prop('id')) - message.value.indexOf($(b).prop('id'));
             });
             list.append(li);
             break;
         case 'new-attacking-pokemon':
-            $('.attacking-pokemon').attr('src', '/sprites/back/'+message.value+'.png');
+            if (message.value) {
+                $('.attacking-pokemon').css('display', 'block');
+                $('.attacking-pokemon').prop('src', '/sprites/back/'+message.value+'.png');
+            } else {
+                $('.attacking-pokemon').css('display', 'none');
+            }
+            break;
+        case 'introduce-pokemon':
+            if (message.value) {
+                $('.intro-pokemon').css('display', 'block');
+                $('.intro-pokemon').prop('src', '/sprites/'+message.value+'.png');
+            } else {
+                $('.intro-pokemon').css('display', 'none');
+            }
             break;
         default:
             console.log('unsupported message type: '+message.type);

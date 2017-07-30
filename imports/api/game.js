@@ -109,10 +109,12 @@ export const Game = {
     'init'(game) {
         const scores = {};
         const nicknames = {};
+        const ids = {};
         for (let i=0; i<game.players.length; i++) {
             let player = game.players[i];
             let pokemon = Pokemon.findOne(game.pokemon[player]);
             nicknames[player] = pokemon.nickname;
+            ids[player] = pokemon.identifier;
             scores[player] = 0;
             for (category in pokemon.condition) {
                 if (category == game.category) {
@@ -135,9 +137,17 @@ export const Game = {
         for (let i=0; i<game.players.length; i++) {
             const p = game.players[i];
             const username = Meteor.users.findOne(p).username;
+            state.messages.push({
+                type: 'introduce-pokemon',
+                value: Pokedex.idToId(ids[p]),
+            });
             state.messages.push("Entry No. "+(i+1)+"! \n"+username+"'s "+nicknames[p]+"!");
             state.messages.push(nicknames[p]+" got "+scoreToHearts(game.rank, scores[p])+" hearts!");
         }
+        state.messages.push({
+            type: 'introduce-pokemon',
+            value: false,
+        });
         state.messages.push("We've just seen the "+order.length+" Pokemon contestants.");
         state.messages.push("Now it's time for primary judging!");
         state.messages.push("The audience will vote on their favorite Pokemon contestants.");
@@ -444,6 +454,10 @@ export const Game = {
 
             nState.lastMove[player] = action.action;
         }
+        nState.messages.push({
+            type: 'new-attacking-pokemon',
+            value: false,
+        });
 
         for (let i=0; i<pState.order.length; i++) {
             const player = pState.order[i];

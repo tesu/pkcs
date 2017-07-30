@@ -198,6 +198,7 @@ h1 {
 #stage .attacking-pokemon {
     height: 192px;
     width: 192px;
+    display: none;
 }
 #stage .intro-pokemon {
     position: absolute;
@@ -210,6 +211,7 @@ h1 {
     width: 192px;
     background-color: white;
     border: 3px solid gray;
+    display: none;
 }
 #applause {
     background-color: khaki;
