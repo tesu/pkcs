@@ -108,6 +108,7 @@ function shuffle(array) {
 export const Game = {
     'init'(game) {
         const scores = {};
+        const stage2 = {};
         const nicknames = {};
         const ids = {};
         for (let i=0; i<game.players.length; i++) {
@@ -115,7 +116,7 @@ export const Game = {
             let pokemon = Pokemon.findOne(game.pokemon[player]);
             nicknames[player] = pokemon.nickname;
             ids[player] = pokemon.identifier;
-            scores[player] = 0;
+            scores[player] = stage2[player] = 0;
             for (category in pokemon.condition) {
                 if (category == game.category) {
                     scores[player] += parseFloat(pokemon.condition[category]);
@@ -129,7 +130,8 @@ export const Game = {
         
         const state = {
             order: order,
-            score: scores,
+            stage1: scores,
+            stage2: stage2,
             messages: [],
         }
         state.messages.push("Hello! We're just getting started with a " + game.rank + " rank Pokemon " + game.category + " contest!");
@@ -169,7 +171,8 @@ export const Game = {
         const nState = { 
             excitement: pState.excitement || 0,
             flags: pState.flags || {},
-            score: {},
+            stage1: pState.stage1,
+            stage2: {},
             lastMove: {},
             hearts: {},
             messages: [],
@@ -483,7 +486,7 @@ export const Game = {
             if (nState.flags[player].goFirst) nState.hearts[player]-=99;
             if (nState.flags[player].goLast) nState.hearts[player]+=99;
 
-            nState.score[player] = pState.score[player] + nState.hearts[player]
+            nState.stage2[player] = pState.stage2[player] + 10*nState.hearts[player];
 
             const f = nState.flags[player];
             if (f.doublejam) f.doublejam = false;
