@@ -500,6 +500,10 @@ export const Game = {
         return nState;
     },
     'end'(game) {
+        const s = game.states[game.turn];
+        const order = s.order.sort(function(a,b){
+            return (s.order.stage1[b]+s.order.stage2[b])-(s.order.stage1[a]+s.order.stage2[a]);
+        });
         state = {
             messages: [],
         }
@@ -512,7 +516,16 @@ export const Game = {
         state.messages.push("We will now declare the winner!");
         state.messages.push({
             type: 'show-scoreboard',
-        })
+        });
+        state.messages.push({
+            type: 'order',
+            value: order,
+        });
+        for (let i=0; i<order.length; i++) {
+            const p = order[i];
+            const stars = Math.ceil(s.stage1[p]/63);
+            const hearts = Math.max(Math.ceil(s.stage2[p]/40),0);
+        }
         return state;
     },
 }
