@@ -91,9 +91,18 @@ h1 {
 #playerlist .username {
     float: right;
 }
+.scoreboard #playerlist .username {
+    float: left;
+}
+.scoreboard #playerlist .username:after {
+    content: '☆☆★★';
+}
 #playerlist .info {
     display: flex;
     clear: both;
+}
+.scoreboard #playerlist .info {
+    display: none;
 }
 #playerlist .condition {
     width: 1em;
