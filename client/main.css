@@ -94,9 +94,6 @@ h1 {
 .scoreboard #playerlist .username {
     float: left;
 }
-.scoreboard #playerlist .username:after {
-    content: '☆☆★★';
-}
 #playerlist .info {
     display: flex;
     clear: both;
@@ -125,6 +122,16 @@ h1 {
 }
 #playerlist .hearts.negative {
     color: black;
+}
+#playerlist .score {
+    display: none;
+    float: right;
+}
+.scoreboard #playerlist .score {
+    display: block;
+}
+#playerlist .score .hearts {
+    color: hotpink;
 }
 #log {
     height: 20em;
