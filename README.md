@@ -14,7 +14,7 @@ you need meteor installed first
 * status effect icons
 * improve security
 * turn timers
-* better + faster pokemon editing ui
+* completely rehaul pokemon editing ui
 * debug backend / make it more accurate
 * move animations
 
