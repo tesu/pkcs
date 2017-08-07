@@ -497,6 +497,10 @@ export const Game = {
             if (f.skipped) f.skipped = false;
         }
 
+        if (game.turn>=4) {
+            nState.end = true;
+        }
+
         return nState;
     },
     'end'(game) {

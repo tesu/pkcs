@@ -39,7 +39,7 @@ Meteor.methods({
                     },
                 });
 
-                if (game.turn>=4) {
+                if (nState.end) {
                     const endState = Game.end(game);
 
                     Games.update({_id: game._id}, {
