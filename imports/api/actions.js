@@ -16,6 +16,9 @@ Meteor.methods({
     'actions.insert'(gid, action) {
         if (!Meteor.userId()) throw new Meteor.Error('not-authorized');
         const game = Games.findOne(gid);
+        
+        if (!game) throw new Meteor.Error('invalid-game');
+        if (Actions.find({user: Meteor.userId(), turn: game.turn, game: gid}, {limit: 1}).count(true) > 0) throw new Meteor.Error('already-moved');
 
         Actions.insert({
             user: Meteor.userId(),
