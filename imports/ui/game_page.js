@@ -184,6 +184,20 @@ function updateUI(message) {
         case 'show-scoreboard':
             $('#game').addClass('scoreboard');
             break;
+        case 'end-stars':
+            if (message.value > 0) {
+                for (let i=0;i<message.value&&i<10;i++) s+='★';
+                for (let i=message.value;i<10;i++) s+='☆';
+            }
+            $('#'+message.player+' .stars').text(s);
+            break;
+        case 'end-hearts':
+            if (message.value > 0) {
+                for (let i=0;i<message.value&&i<10;i++) s+='♥';
+                for (let i=message.value;i<10;i++) s+='♡';
+            }
+            $('#'+message.player+' .end-hearts').text(s);
+            break;
         default:
             console.log('unsupported message type: '+message.type);
             break;

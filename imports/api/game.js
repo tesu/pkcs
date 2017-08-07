@@ -525,6 +525,16 @@ export const Game = {
             const p = order[i];
             const stars = Math.ceil(s.stage1[p]/63);
             const hearts = Math.max(Math.ceil(s.stage2[p]/40),0);
+            state.messages.push({
+                type: 'end-stars',
+                value: stars,
+                player: p,
+            });
+            state.messages.push({
+                type: 'end-hearts',
+                value: hearts,
+                player: p,
+            });
         }
         return state;
     },
