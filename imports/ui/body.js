@@ -37,10 +37,11 @@ Template.index.events({
     },
     'submit .new-game'(event) {
         event.preventDefault();
-        
+        const instance = Template.instance();
         const f = event.target;
 
         Meteor.call('games.insert', f.name.value, f.rank.value, f.category.value, f.pokemon.value);
+        instance.state.set('show-form', false);
     },
 });
 
