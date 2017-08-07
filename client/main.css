@@ -1,4 +1,3 @@
-/* CSS declarations go here */
 body {
     font-family: 'VT323', monospace;
     font-size: 16px;
@@ -88,6 +87,9 @@ h1 {
 #playerlist .nickname {
     float: left;
 }
+.scoreboard #playerlist .nickname {
+    margin-left: 10em;
+}
 #playerlist .username {
     float: right;
 }
@@ -126,6 +128,7 @@ h1 {
 #playerlist .score {
     display: none;
     float: right;
+    margin-right: 10em;
 }
 .scoreboard #playerlist .score {
     display: block;
