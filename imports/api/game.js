@@ -182,6 +182,14 @@ export const Game = {
             hearts: {},
             messages: [],
         };
+        // reset heart scoreboard for new round
+        for (let i=0; i<pState.order.length; i++) {
+            nState.messages.push({
+                type: 'hearts',
+                player: pState.order[i],
+                value: 0,
+            });
+        }
         for (let i=0; i<pState.order.length; i++) {
             const player = pState.order[i];
             const pokemon = Pokemon.findOne(game.pokemon[player]);
