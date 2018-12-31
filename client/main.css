@@ -153,11 +153,15 @@ h1 {
     border: 0;
     border-spacing: 0;
     border-collapse: collapse;
+    border-style: hidden; /* trick to hide outer edges */
     width: 100%;
-    background-color: cornflowerblue;
+    background-color: #3937a3;
+    color: white;
 }
 .action td {
-    border: 4px solid gray;
+    border: 2px solid black;
+    box-shadow: inset 0 0 0 4px gray;
+    padding: 4px;
 }
 .action .category {
     font-size: 2em;
@@ -166,9 +170,10 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     margin-left: .2em;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
 }
 .action .category.cool {
-    background-color: orange;
+    background-color: #d1553e;
 }
 .action .category.beauty {
     background-color: blue;
@@ -176,15 +181,39 @@ h1 {
 .action .category.cute {
     background-color: pink;
 }
-.action .category.clever {
+.action .category.smart {
     background-color: green;
 }
 .action .category.tough {
-    background-color: yellow;
+    background-color: #c0a310;
+}
+.action .slash {
+    font-size: 2em;
+    float: left;
+    margin-left: .2em;
 }
 .action .appeal, .action .jam {
     float: right;
     clear: right;
+}
+.action .word {
+    text-transform: uppercase;
+    display: inline-block;
+    width: 2.5em;
+    padding: 0 3px;
+    margin-right: 3px;
+}
+.action .appeal .word {
+    background-color: red;
+}
+.action .jam .word {
+    background-color: gray;
+}
+.action .appeal .hearts {
+    color: red;
+}
+.action .jam .hearts {
+    color: black;
 }
 .action .info {
     width: 100%;
@@ -277,7 +306,7 @@ h1 {
 #moves li {
     cursor: pointer;
 }
-#moves li:hover:before {
+#moves .selected:before {
     content: "►";
     position: absolute;
     left: 0.5em;

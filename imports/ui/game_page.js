@@ -230,16 +230,18 @@ Template.game_page.events({
         const action = event.target.dataset.action;
         const move = Pokedex.moveData(action);
         $('.category').text(move.category);
-        $('.category').removeClass('cool beauty cute clever tough');
+        $('.category').removeClass('cool beauty cute smart tough');
+        $('.action').removeClass('selected');
+        $(event.target).addClass('selected');
         $('.category').addClass(move.category);
-        let appeal = "Appeal ";
+        let appeal = "";
         for (let i=0;i<move.appeal;i++) appeal += '♥';
         for (let i=move.appeal;i<8;i++) appeal += '♡';
-        let jam = "Jam ";
+        let jam = "";
         for (let i=0;i<move.jam;i++) jam += '♥';
         for (let i=move.jam;i<8;i++) jam += '♡';
-        $('.appeal').text(appeal);
-        $('.jam').text(jam);
+        $('.appeal .hearts').text(appeal);
+        $('.jam .hearts').text(jam);
         $('.flavor').text(move.flavor);
     },
     'click #dialog'(event) {
