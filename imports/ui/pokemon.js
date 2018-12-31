@@ -14,7 +14,7 @@ Template.pokemon.onCreated(function() {
 
 Template.pokemon.helpers({
     myPokemon() {
-        return Pokemon.find({});
+        return Pokemon.find({"owner": Meteor.userId()});
     },
     pokemonData() {
         return Pokemon.findOne(this._id);

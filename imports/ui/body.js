@@ -10,9 +10,16 @@ import './game_page.js';
 import './pokemon.js';
 import './body.html';
 
+if (Meteor.isServer) {
+    Meteor.publish('usernames', function usernamePub(id) {
+        return Meteor.users.find({_id: id}, {fields: {'username': 1}});
+    });
+}
+
 Template.index.onCreated(function() {
     Meteor.subscribe('games');
     Meteor.subscribe('pokemon_instances');
+    Meteor.subscribe('usernames');
 
     this.state = new ReactiveDict();
 });
@@ -22,7 +29,7 @@ Template.index.helpers({
         return Games.find({});
     },
     pokemon() {
-        return Pokemon.find();
+        return Pokemon.find({"owner": Meteor.userId()});
     },
     showGameForm() {
         return Template.instance().state.get('show-form');
