@@ -519,7 +519,7 @@ export const Game = {
     'end'(game) {
         const s = game.states[game.turn];
         const order = s.order.sort(function(a,b){
-            return (s.order.stage1[b]+s.order.stage2[b])-(s.order.stage1[a]+s.order.stage2[a]);
+            return (s.stage1[b]+s.stage2[b])-(s.stage1[a]+s.stage2[a]);
         });
         state = {
             messages: [],
