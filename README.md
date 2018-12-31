@@ -13,12 +13,13 @@ A Pokemon contest simulator written in Meteor.
 * improve spectator experience
 * proper icon fonts instead of relying on DejaVuSans Mono
 * status effect icons
-* improve security
+* improve security!!!
 * turn timers
 * completely rehaul pokemon editing ui
-* view for pokemon, list contest wins?
+* view for pokemon, list contest wins / accolades?
 * debug backend / make it more accurate
 * move animations
+* spectator effects / judge effects (animations)
 * sound
 
 ## Credits
