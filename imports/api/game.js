@@ -466,7 +466,8 @@ export const Game = {
                 player: player,
                 value: nState.hearts[player],
             });
-            nState.messages.push(pokemon.nickname + ' got ' + nState.hearts[player] + ' hearts.');
+            // TODO: better (more accurate) lines here
+            nState.messages.push(pokemon.nickname + ' got ' + nState.hearts[player] + ' heart' + (nState.hearts[player] == 1 ? '' : 's') + '.');
 
             nState.lastMove[player] = action.action;
         }

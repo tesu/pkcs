@@ -76,6 +76,16 @@ h1 {
 .scoreboard #playerlist {
     width: 100%;
 }
+#playerlist img {
+    display: none;
+}
+.scoreboard #playerlist img {
+    float: left;
+    display: block;
+    height: 150%;
+    margin-top: -10px;
+    margin-left: 8em;
+}
 #playerlist li {
     height: 3em;
     width: 8em;
@@ -86,14 +96,13 @@ h1 {
     padding: 0 1em;
 }
 .scoreboard #playerlist li {
+    box-sizing: border-box;
     width: 100%;
     background-color: white;
+    overflow: hidden;
 }
 #playerlist .nickname {
     float: left;
-}
-.scoreboard #playerlist .nickname {
-    margin-left: 10em;
 }
 #playerlist .username {
     float: right;
@@ -106,6 +115,9 @@ h1 {
     clear: both;
 }
 .scoreboard #playerlist .info {
+    display: none;
+}
+.scoreboard #stage {
     display: none;
 }
 #playerlist .condition {

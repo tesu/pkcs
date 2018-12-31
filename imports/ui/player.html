@@ -1,6 +1,7 @@
 <template name="player">
     {{#if id}}
     <li id="{{id}}">
+        <img src="/sprites/{{pokemon_id}}.png">
         <div class="nickname">{{nickname}}</div>
         <div class="username">/{{username}}</div>
         <div class="info">
@@ -15,7 +16,8 @@
     </li>
     {{else}}
     <li>
-        empty
+        <img src="/sprites/substitute.png">
+        <div class="nickname">empty</div>
     </li>
     {{/if}}
 </template>
