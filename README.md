@@ -22,5 +22,6 @@ A Pokemon contest simulator written in Meteor.
 * sound
 
 ## Credits
-Much thanks to Veekun's [pokedex](https://github.com/veekun/pokedex) project, where all of the sprites/game data was taken from.
+* Game Data/Sprites taken from veekun's [pokedex](https://github.com/veekun/pokedex) project
+* Typeface is crystalwalrein's [Pokémon Emerald Pro](https://fontstruct.com/fontstructions/show/832818), licensed under a [Creative Commons Attribution Share Alike](http://creativecommons.org/licenses/by-sa/3.0/) license
 
