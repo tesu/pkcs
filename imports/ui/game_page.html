@@ -14,22 +14,15 @@
         </div>
     </div>
     {{#if stateIsIngame}}        
+    {{#if canMove}}
     <div id="dialog">
-    {{#unless canMove}}
-        <div id="current-message">
-            {{text}}
-            {{#unless atEnd}}
-            <button id="skip">Skip</button>
-            {{/unless}}
-        </div>
-    {{else}}
         <form class="action">
             <table>
                 <tr>
                     <td rowspan="2">
                         <ul id="moves">
                             {{#each move in moves}}
-                            <li><button type="submit" name="action" value="{{move}}">{{name move}}</button></li>
+                            <li class="action" data-action="{{move}}">{{name move}}</li>
                             {{/each}}
                         </ul>
                     </td>
@@ -44,8 +37,17 @@
                 </tr>
             </table>
         </form>
-    {{/unless}}
     </div>
+    {{else}}
+    <div id="dialog">
+        <div id="current-message">
+            {{text}}
+        </div>
+    </div>
+    {{#unless atEnd}}
+    <button id="skip">Skip</button>
+    {{/unless}}
+    {{/if}}
     {{/if}}
     {{#if isHost}}
         {{#if stateIsPreparation}}        

@@ -2,6 +2,11 @@ import {Pokemon} from './pokemon.js';
 import {Pokedex} from './pokedex.js';
 import {Actions} from './actions.js';
 
+function name(s) {
+    return s.split('-').map(function(str) {
+        return str.charAt(0).toUpperCase()+str.slice(1);
+    }).join(' ');
+}
 function scoreToHearts(rank, score) {
     switch (rank) {
         case 'normal':
@@ -134,7 +139,7 @@ export const Game = {
             stage2: stage2,
             messages: [],
         }
-        state.messages.push("Hello! We're just getting started with a " + game.rank + " rank Pokemon " + game.category + " contest!");
+        state.messages.push("Hello! We're just getting started with a " + name(game.rank) + " Rank Pokemon " + game.category + " contest!");
         state.messages.push("The participating trainers and their Pokemon are as follows:");
         for (let i=0; i<game.players.length; i++) {
             const p = game.players[i];
@@ -207,7 +212,7 @@ export const Game = {
                 type: 'new-attacking-pokemon',
                 value: Pokedex.idToId(pokemon.identifier),
             });
-            nState.messages.push(pokemon.nickname + ' appealed with ' + move.identifier + '!');
+            nState.messages.push(pokemon.nickname + ' appealed with ' + name(move.identifier) + '!');
             
             if (!nState.noApplause) {
                 if (move.effect_id == 13) {

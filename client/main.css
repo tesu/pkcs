@@ -78,11 +78,12 @@ h1 {
 }
 #playerlist li {
     height: 3em;
-    width: 10em;
+    width: 8em;
     background-color: gold;
     border: 1px solid black;
     border-radius: 2px;
     border-top: 0;
+    padding: 0 1em;
 }
 .scoreboard #playerlist li {
     width: 100%;
@@ -125,6 +126,7 @@ h1 {
 #playerlist .hearts {
     display: inline-block;
     color: red;
+    margin-left: .25em;
 }
 #playerlist .hearts.negative {
     color: black;
@@ -241,35 +243,44 @@ h1 {
     color: red;
     width: 4em;
     border: 1px solid brown;
-    border-radius: 15px;
-    padding: .5em;
+    border-radius: 10px;
+    padding: .1em;
     margin: .5em;
     text-align: center;
 }
 #applause hr {
-    border: 1px solid;
+    border: 0;
+    border-top: 1px solid;
     margin: 0;
+}
+#applause-count {
+    font-family: monospace;
 }
 #dialog {
     height: 6em;
     clear: both;
-}
-#skip {
-    position: absolute;
-    bottom: 0;
-    right: 0;
 }
 #current-message {
     height: 100%;
     background-color: white;
     border: 5px solid salmon;
     box-sizing: border-box;
+    padding: 5px;
+    font-size: 1.5em;
 }
 #moves {
     list-style: none;
     padding: initial;
-    margin: 0;
+    margin: 0 1em;
     width: 7.5em;
+}
+#moves li {
+    cursor: pointer;
+}
+#moves li:hover:before {
+    content: "►";
+    position: absolute;
+    left: 0.5em;
 }
 #moves button {
     width: 100%;

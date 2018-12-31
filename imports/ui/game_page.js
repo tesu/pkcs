@@ -55,6 +55,7 @@ Template.game_page.onCreated(function() {
 
 Template.game_page.helpers({
     name(s) {
+        return s.toUpperCase();
         return s.split('-').map(function(str) {
             return str.charAt(0).toUpperCase()+str.slice(1);
         }).join(' ');
@@ -221,13 +222,12 @@ Template.game_page.events({
 
         Meteor.call('game.delete', FlowRouter.getParam('_id'));
     },
-    'click .action button'(event) {
-        event.preventDefault();
-        const action = event.target.value;
+    'click .action li'(event) {
+        const action = event.target.dataset.action;
         Meteor.call('actions.insert', FlowRouter.getParam('_id'), action);
     },
-    'mouseenter .action button'(event) {
-        const action = event.target.value;
+    'mouseenter .action li'(event) {
+        const action = event.target.dataset.action;
         const move = Pokedex.moveData(action);
         $('.category').text(move.category);
         $('.category').removeClass('cool beauty cute clever tough');
