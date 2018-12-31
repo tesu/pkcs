@@ -151,7 +151,10 @@ h1 {
 .scoreboard #playerlist .score {
     display: block;
 }
-#playerlist .score .hearts {
+#playerlist .score .stars{
+    color: gold;
+}
+#playerlist .score .end-hearts {
     color: hotpink;
 }
 #log {
